@@ -1,0 +1,58 @@
+.login {
+    background: #e94b35;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.store-audit {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia;
+    font-style: italic;
+    color: #fff;
+  }
+
+  .logo {
+    position: fixed;
+    bottom: 50px;
+    height: 100px;
+    width: 130px;
+    left: 50px;
+}
+
+.logo img {
+    height: 100px;
+    width: 130px;
+}
+
+.channel-partner{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia;
+    font-style: italic;
+    color: #fff;
+}
+
+
+.login-fields .padding {
+    width: 316px;
+    height: 50px;
+    background-color: #e95139;
+    border: 1px solid #ccc;
+    padding-left: 65px;
+    margin-bottom: 10px;
+  }
+
+  .login-button{
+    background-color: #fff!important;
+    height: 55px;
+    color: #e94b35;
+    width: 316px;
+    font-size: 20px;
+  }

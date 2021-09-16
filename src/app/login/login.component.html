@@ -1,0 +1,28 @@
+<div class="container-fluid login">
+    <div class="channel-partner">
+        <h3>Channel Partner<br/> Assessment Tool</h3>
+    </div>
+    <div>
+        <form [formGroup]="login" (submit)="loginSubmit()">
+            <div class="login-fields">
+                <div class="form-group">
+                    <input type="text" autofocus name="username" formControlName="username" class="form-control padding">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" formControlName="password" class="form-control padding">
+                </div>
+                    <!-- <div class="forgot-pswd">
+                    <p>Forgot password ?</p>
+                    </div> -->
+            
+                <div class="form-group bagrnd-color">
+                    <button name="submit" class="form-control login-button disabled" >LOGIN</button>
+                </div>
+            </div>
+        </form>
+    </div>
+      <div class="logo">
+        <img src="assets/images/logo.png" class="img-responsive">
+      </div>
+    
+</div>
