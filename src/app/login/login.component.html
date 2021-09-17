@@ -6,9 +6,11 @@
         <form [formGroup]="login" (submit)="loginSubmit()">
             <div class="login-fields">
                 <div class="form-group">
+                    <mat-icon>supervised_user_circle</mat-icon>
                     <input type="text" autofocus name="username" formControlName="username" class="form-control padding">
                 </div>
                 <div class="form-group">
+                    <mat-icon>password</mat-icon>
                     <input type="password" name="password" formControlName="password" class="form-control padding">
                 </div>
                     <!-- <div class="forgot-pswd">

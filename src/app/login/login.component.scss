@@ -56,3 +56,17 @@
     width: 316px;
     font-size: 20px;
   }
+
+  .mat-icon {
+    justify-content: center;
+    width: 18px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    left: 24px;
+    top: 12px;
+    color: #fff;
+  }
+  .form-group{
+    position: relative;
+  }

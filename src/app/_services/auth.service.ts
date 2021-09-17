@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +24,7 @@ export class AuthService {
 
     let params = {
       // grant_type: "password",
-      username: credentials.username,
+      email : credentials.username,
       password: credentials.password,
       // client_id: "maruthi-suzuki",
       // client_secret: "test",
@@ -34,7 +35,7 @@ export class AuthService {
     //   body.set(key, params[key]);
     // });
 
-    return this.http.post(`https://cpat-new-user-app.azurewebsites.net/instore/v1/${this.endpoints.login}`, params, { headers: headers });
+    return this.http.post(`${environment.apiUrl}/user/login`, params, { headers: headers });
 
   }
 }
