@@ -5,12 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import {MatIconModule} from '@angular/material/icon';
+import { AuthModule } from './auth/auth.module';
+import { AppMaterialModule } from './app-material/app-material.module';
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    AppMaterialModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
