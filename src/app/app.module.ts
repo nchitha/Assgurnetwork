@@ -7,16 +7,26 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AuthService } from './_services/auth.service';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeLayoutComponent,
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AppMaterialModule,
-    AuthModule
+    AuthModule,
+    DashboardModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

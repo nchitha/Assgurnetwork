@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139.867 86">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.15;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="iconfinder_add_group_309050" class="cls-1" transform="translate(-1 -6)">
+    <g id="Group_7246" data-name="Group 7246" transform="translate(32.653 6)">
+      <path id="Path_4711" data-name="Path 4711" class="cls-2" d="M27.459,25.846C27.459,14.6,36.325,6,47.918,6s20.459,8.6,20.459,19.846S59.512,45.692,47.918,45.692,27.459,37.092,27.459,25.846ZM47.918,58.923C16.548,58.923,7,80.754,7,80.754V92H88.837V80.754S79.289,58.923,47.918,58.923Z" transform="translate(-7 -6)"/>
+    </g>
+    <g id="Group_7249" data-name="Group 7249" transform="translate(91.083 6)">
+      <g id="Group_7247" data-name="Group 7247" transform="translate(2.046)">
+        <circle id="Ellipse_150" data-name="Ellipse 150" class="cls-2" cx="17.049" cy="17.049" r="17.049"/>
+      </g>
+      <g id="Group_7248" data-name="Group 7248" transform="translate(0 45.082)">
+        <path id="Path_4712" data-name="Path 4712" class="cls-2" d="M35.8,13c-8.184,0-14.321,2.046-19.1,5.456,15.685,7.5,21.823,20.459,21.823,21.823v.682H66.484V32.1C66.484,31.413,58.982,13,35.8,13Z" transform="translate(-16.7 -13)"/>
+      </g>
+    </g>
+    <line id="Line_74" data-name="Line 74" class="cls-3" y2="54.558" transform="translate(28.279 18.777)"/>
+    <line id="Line_75" data-name="Line 75" class="cls-3" x1="54.558" transform="translate(1 45.692)"/>
+  </g>
+</svg>

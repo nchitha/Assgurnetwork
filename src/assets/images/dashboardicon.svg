@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.704 55.704">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_7245" data-name="Group 7245" transform="translate(-8.148 -48)">
+    <g id="iconfinder_ic_dashboard_48px_352300" transform="translate(8.148 48)">
+      <path id="Path_4709" data-name="Path 4709" class="cls-1" d="M0,0H55.7V55.7H0Z"/>
+      <path id="Path_4710" data-name="Path 4710" class="cls-2" d="M139.875,163.085h18.568v-23.21H139.875Zm0,18.568h18.568V167.727H139.875Zm23.21,0h18.568v-23.21H163.085Zm0-41.778V153.8h18.568V139.875Z" transform="translate(-132.912 -132.912)"/>
+    </g>
+  </g>
+</svg>

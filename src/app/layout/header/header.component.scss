@@ -1,0 +1,32 @@
+.dashboard_link{
+    color:#fff;
+    margin-left:5px;
+    font-size:17px;
+    position: relative;
+    top:15px;
+    cursor: pointer;
+}
+
+.users{
+    float:right;
+    .mat-icon{
+        color:#fff;
+        font-size: 38px;
+    }
+
+    .username{
+        color:#fff;
+        margin-left:5px;
+        font-size:14px;
+    }
+}
+
+.user_image{
+    width:30px;
+    height:30px;;
+    background-color: #fff;
+    border-radius:50%;
+    display: inline-block;
+    top: 8px;
+    position: relative;
+}

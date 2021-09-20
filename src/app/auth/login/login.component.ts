@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
 
   loginSubmit() {
     this.authService.login(this.login.value).subscribe((data) => {
-      console.log(data);
+      this.router.navigate(['/app/dashboard']);
+        console.log(data);
+
     }, (err:any) => {
       console.log("Login error", err);
     });
