@@ -8,10 +8,12 @@ import { first } from 'rxjs/operators';
 })
 export class DashboardComponent implements OnInit {
   dashboard: any;
+  loaded = false;
   constructor(private commonService:CommonService) { }
 
   ngOnInit(): void {
     this.commonService.getAnalytics().pipe(first()).subscribe(data  => {
+      this.loaded= true;
       this.dashboard = data;
     });
   }

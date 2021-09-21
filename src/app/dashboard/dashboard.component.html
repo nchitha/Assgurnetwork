@@ -1,3 +1,4 @@
+
 <div class="col-xs-sm  offset-2">
     <div class="home-dashboard">
         <div class="dashboard-img d-flex align-items-center justify-content-center h-100 flex-column">
@@ -7,7 +8,7 @@
             <span class="welcome-dashboard">Welcome to Dashboard !</span>
         </div>
   </div>
-  <div class="dashboard-boxes" >
+  <div class="dashboard-boxes" *ngIf="loaded" >
     <div class="dashboard-box box1" >
       <div class="clients-img">
         <img src="assets/images/add_client.svg" alt="add-client" class="img-responsive" />

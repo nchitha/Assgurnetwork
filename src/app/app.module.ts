@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppMaterialModule,
     AuthModule,
     DashboardModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [AuthService,CommonService],
   bootstrap: [AppComponent],
