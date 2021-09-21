@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl : 'https://cpat-user-service.azurewebsites.net/api/v1/',
+  apiUrlAdmin:'https://cpat-test-nodejs.azurewebsites.net/api/v1/'
 };
 
 /*

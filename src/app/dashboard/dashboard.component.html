@@ -1,4 +1,4 @@
-<div class="col-md-10  offset-2">
+<div class="col-xs-sm  offset-2">
     <div class="home-dashboard">
         <div class="dashboard-img d-flex align-items-center justify-content-center h-100 flex-column">
           <div class="dashboard-icon">
@@ -6,4 +6,37 @@
           </div>
             <span class="welcome-dashboard">Welcome to Dashboard !</span>
         </div>
+  </div>
+  <div class="dashboard-boxes" >
+    <div class="dashboard-box box1" >
+      <div class="clients-img">
+        <img src="assets/images/add_client.svg" alt="add-client" class="img-responsive" />
+        <div class="clients">
+          <span class="clients-number">{{dashboard.investors}}</span>
+          <br />
+          <span class="dashboard-client">Investors</span>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-box box2">
+      <div class="clients-img">
+        <img src="assets/images/add_model.svg" alt="add-client" class="img-responsive" />
+        <div class="clients">
+          <span class="clients-number">{{dashboard.dealers}}</span>
+          <br />
+          <span class="dashboard-client">Dealers</span>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-box box3">
+      <div class="clients-img">
+        <img src="assets/images/engagements.svg" alt="add-client" class="img-responsive" />
+        <div class="clients">
+          <span class="clients-number">{{dashboard.engagements}}</span>
+          <br />
+          <span class="dashboard-client">Engagements</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

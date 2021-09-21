@@ -13,3 +13,47 @@
     color: #fff;
     font-size: 16px;
 }
+.dashboard-boxes{
+    display: flex;
+    align-items: stretch;
+}
+.dashboard-box{
+    color: white;
+    margin: 10px;
+    text-align: center;
+    margin: 10px;
+    height: 175px;
+    font-size: 15px;
+    flex-grow: 3;
+    position:relative;
+}
+
+.box1{
+    background:#aa2417;
+}
+
+.box2{
+    background:#e44838;
+}
+
+.box3{
+    background:#ffb600;
+}
+
+.clients-img{
+    img{
+        width:100px;
+        position:absolute;
+        bottom:20px;
+        left:20px;
+    }
+    .clients-number{
+        font-size: 45px;
+    }
+
+    .clients{
+        position: absolute;
+        bottom: 50px;
+        right: 35px;
+    }
+}

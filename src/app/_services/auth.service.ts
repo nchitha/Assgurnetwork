@@ -7,9 +7,6 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  endpoints = {
-    login: 'user/login'
-  }
   constructor( private http: HttpClient) { }
   services(){
     return [1,2,4,5];
