@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { 	MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
  imports: [
 	CommonModule,
 	MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
   ],
   exports: [
 	MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
   ],
   declarations: []
 })

@@ -1,0 +1,42 @@
+<div class="pop-header">
+    <span class="pop-header-text">Manage Investors</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body">
+    <button class="btn create-btn" (click)="createClient()">Create New</button>
+    <div id="scroll" data-simplebar class="table-container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let inv of investors;let i=index">
+              <td><span>{{inv.investorName}}</span>
+                <input class="txt-width"
+                  type="text" *ngIf="editInv && isSelectedInvRow==i" [(ngModel)]="editedInvName" />
+                </td>
+              <td>
+                <span>
+                  <img src="assets/images/edit.svg" class="align-right1"
+                    (click)="editInv=true;editInvestor(1,inv)" /></span>
+                    <span *ngIf="editInv && isSelectedInvRow==i">
+                    <button
+                    (click)="editInv=false" class="btn main-btn"
+                    (click)="updateInvestor(1,editedInvName)">Update</button>
+                    <button (click)="editInv=false"
+                    class="btn sec-btn"  class="close-icon">Cancel</button>
+                  </span>
+              </td>
+              <!-- <td><img src="assets/images/review_icon.svg" data-toggle="modal"  data-target="#deleteInv" (click)="deleteInvestorDetails(inv)" /></td> -->
+              <td><span><mat-icon class="delete-color-size" data-dismiss="modal" (click)="deleteInvestor(1)">delete</mat-icon></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+</div>

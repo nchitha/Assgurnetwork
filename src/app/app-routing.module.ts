@@ -8,10 +8,9 @@ const routes: Routes = [
         path: 'app', component: HomeLayoutComponent,
         children: [
           { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+        { path: 'clientdetails', loadChildren: () => import('./clientdetails/clientdetails.module').then(m => m.ClientdetailsModule) }
         ]
     },
-
-  
 ];
 
 @NgModule({

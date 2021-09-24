@@ -1,0 +1,21 @@
+.create-btn{
+    float: right;
+    padding:15x;
+    background: #e86153;
+    color:#fff;
+}
+
+.table-container {
+    position: relative;
+    top: 19px;
+    thead {
+        background-color: #e86153;
+        color: #fff;
+        border: 1px solid #e86153;
+        padding: 20px;
+    }
+    .delete-color-size{
+        color:#e86153;
+        font-size: 30px;   
+    }
+}

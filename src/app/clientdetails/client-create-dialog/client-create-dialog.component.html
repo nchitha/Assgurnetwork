@@ -1,0 +1,24 @@
+<div class="pop-header">
+    <span class="pop-header-text">Add Investors</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body">
+    <div  class="single_bulk">
+        <span  class="upload_data">Single Creation</span>
+        <span  class="upload_data">Bulk Upload</span>
+    </div>
+    <div  class="padd_10">
+        <form  [formGroup]="investorForm">
+            <div  class="form-group inversor-form">
+                <label  for="investor">Investor Name: </label>
+                <input class="form-control margin-bottom" formControlName="investor" name="investor name" placeholder="Enter investor name" type="text">
+            </div>
+        </form>
+        <div  class="modal-footer">
+            <button [disabled]="investorForm.invalid" (click)="onSubmitInvestor()" class="btn add_button" data-dismiss="modal" type="button">Add</button>
+            <button  class="btn close_button" data-dismiss="modal" type="button">Close</button>
+        </div>
+    </div>
+</div>
