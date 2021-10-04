@@ -1,6 +1,6 @@
 .create-btn{
     float: right;
-    padding:15x;
+    padding:15px;
     background: #e86153;
     color:#fff;
 }
@@ -16,6 +16,21 @@
     }
     .delete-color-size{
         color:#e86153;
-        font-size: 30px;   
+        font-size: 30px;
+        cursor: pointer;  
     }
+}
+
+
+.main-btn{
+    background-color: #E86153;
+    border-color: #E86153;
+    color: #fff;
+}
+
+.sec-btn {
+    border-color: #e44838;
+    color: #e44838;
+    background-color: #fff;
+    margin-left: 24px;
 }

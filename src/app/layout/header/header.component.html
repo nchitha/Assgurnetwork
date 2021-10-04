@@ -1,16 +1,54 @@
-<header>
-        <span class="dashboard_link"> Pwc/Dashboard</span>
-        <div class="users">
-        <div class="user_image"> </div>
-        <span class="username">audiAdminLead1@pwc.com</span>
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="btn"> 
-                <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu"> 
-                <button mat-menu-item>
-                  <mat-icon>logout</mat-icon>
-                  <span>Logout</span>
-                </button>
-        </mat-menu>
+<header class="container-fluid">
+        <div class="nopadding main-content row">
+                <div class="logo col-sm-2">
+                        <img src="assets/images/CPAT2.png">
+                </div>
+                <nav class="navbar navbar-expand-lg row col-sm-7 layout">
+                        
+                        <div>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                        <a class="nav-item nav-link" routerLink="/app/dashboard" [routerLinkActive]="['active']">
+                                                <mat-icon>home</mat-icon>
+                                                Home
+                                        </a>
+                                        <a class="nav-item nav-link" routerLink="/app/clientdetails" [routerLinkActive]="['active']">
+                                                <mat-icon>add_to_queue</mat-icon>
+                                                Clients
+                                        </a>
+                                        <a class="nav-item nav-link" >
+                                                <mat-icon>person_add_alt_1</mat-icon>
+                                                Users
+                                        </a>
+                                        <a class="nav-item nav-link disabled" href="#">
+                                                <mat-icon>checkroom</mat-icon>
+                                                Diagnostics
+                                        </a>
+                                        </div>
+                                </div> 
+                        </div>
+                </nav>
+                <div class= "col-sm-3">
+                        <div class="users">
+                                <div class="user_image"> </div>
+                                <span class="username">audiAdminLead1@pwc.com</span>
+                                <button mat-icon-button [matMenuTriggerFor]="menu" class="btn"> 
+                                        <mat-icon>arrow_drop_down</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu"> 
+                                        <button mat-menu-item (click)="profile()">
+                                                <mat-icon>supervised_user_circle</mat-icon>
+                                                <span>Profile</span>
+                                        </button>
+                                        <button mat-menu-item (click)="logout()">
+                                                <mat-icon>logout</mat-icon>
+                                                <span>Logout</span>
+                                        </button>
+                                </mat-menu>
+                        </div>
+                </div>
         </div>
 </header>

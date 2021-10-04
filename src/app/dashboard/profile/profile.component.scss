@@ -1,0 +1,87 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: #e44838
+}
+
+.btn-danger{
+    background: #e44838;
+}
+
+.profile-button {
+    background: #e44838;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #e44838
+}
+
+.profile-button:focus {
+    background: #e44838;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #e44838;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #e44838;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-password:hover {
+    background: #e44838;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #e44838
+}
+
+.profile-pic{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .avatar-upload {
+        position: relative;
+        max-width: 205px;
+        margin: 10px auto 30px;
+      }
+      
+      .avatar-upload .avatar-edit {
+        position: absolute;
+        right: 19px;
+        z-index: 1;
+        top: 13px;
+      }
+      
+      .avatar-upload .avatar-edit input {
+        display: none;
+      }
+    
+    .avatar-upload .avatar-preview {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 12px solid #fff;
+        -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+      }
+      
+      .avatar-upload .avatar-preview>div {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+}

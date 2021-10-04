@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../_services/auth.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private authService: AuthService) {
+    private authService: AuthService,
+    private _snackBar: MatSnackBar) {
     this.login = this.fb.group({
       'username': ['', [Validators.required, Validators.maxLength(255)]],
       'password': ['', [Validators.required, Validators.maxLength(255)]]
@@ -25,12 +28,22 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit() {
-    this.authService.login(this.login.value).subscribe((data) => {
+    this.authService.login(this.login.value).subscribe((data:any) => {
+      localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("refresh_token", data.refresh_token);
+      localStorage.setItem("firstName", data.firstName);
+      localStorage.setItem("lastName", data.lastName);
+      localStorage.setItem("email", data.email);
+      localStorage.setItem("clientId", data.clientId);
+      localStorage.setItem("roleId", data.roleId);
       this.router.navigate(['/app/dashboard']);
-        console.log(data);
 
     }, (err:any) => {
-      console.log("Login error", err);
+      this._snackBar.open(err.error.message, 'Close',{
+        duration: 3000,
+        panelClass: ["redAlert"]
+      });
+      console.log("Login error", err.error.message);
     });
   }
 }

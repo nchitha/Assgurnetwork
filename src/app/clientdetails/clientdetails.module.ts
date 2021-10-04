@@ -6,21 +6,25 @@ import { ClientdetailsRoutingModule } from './clientdetails-routing.module';
 import { ClientdetailsComponent } from './clientdetails.component';
 import { ClientDialogComponent } from './client-dialog/client-dialog.component';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import { ClientCreateDialogComponent } from './client-create-dialog/client-create-dialog.component';
+import { InvestorsCreateDialogComponent } from './investors-create-dialog/investors-create-dialog';
+import { SharedModule } from '../_shared/shared.module';
+import { DealersCreateDialogComponent } from './dealers-create-dialog/dealers-create-dialog.component';
 
 @NgModule({
   declarations: [
     ClientdetailsComponent,
     ClientDialogComponent,
-    ClientCreateDialogComponent
+    InvestorsCreateDialogComponent,
+    DealersCreateDialogComponent
   ],
-  entryComponents: [ClientDialogComponent,ClientCreateDialogComponent],
+  entryComponents: [ClientDialogComponent,InvestorsCreateDialogComponent,DealersCreateDialogComponent],
   imports: [
     CommonModule,
     ClientdetailsRoutingModule,
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ClientdetailsModule { }

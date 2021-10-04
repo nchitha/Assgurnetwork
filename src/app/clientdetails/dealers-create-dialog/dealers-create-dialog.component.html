@@ -1,0 +1,43 @@
+<div class="pop-header">
+    <span class="pop-header-text">{{data.mode =="add" ?"Add":"Edit"}} Dealers</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body" data-simplebar>
+    <div  class="single_bulk">
+        <span  class="upload_data" (click)="isBulkUpload(false)">Single Creation</span>
+        <span  class="upload_data" *ngIf="data.mode =='add'" (click)="isBulkUpload(true)">Bulk Upload</span>
+    </div>
+    <div  class="padd_10" >
+        <form  [formGroup]="dealerForm" *ngIf="!bulkUpload">
+            <div  class="form-group dealer-group">
+                <label  for="dealer">Dealer Name: </label>
+                <input class="form-control margin-bottom" formControlName="dealer" placeholder="Enter dealer name" type="text">
+            </div>
+            <div  class="form-group dealer-group">
+                <label  for="dealer">Investor Name: </label>
+                <select class="form-control" formControlName="investors">
+                    <option *ngFor="let investor of investors"  [value]="investor.id" >
+                        {{ investor.investorName }}
+                    </option>
+                </select>
+            </div>
+            <div  class="form-group dealer-group">
+                <label  for="dealer">Dealer Category: </label>
+                <input class="form-control margin-bottom" formControlName="dealerCategory" placeholder="Enter dealer category" type="text">
+            </div>
+            <div  class="form-group dealer-group">
+                <label  for="dealer">Dealer Code: </label>
+                <input class="form-control margin-bottom" formControlName="dealerCode" placeholder="Enter dealer code" type="text">
+            </div>
+            <div  class="modal-footer">
+                <button [disabled]="dealerForm.invalid" (click)="onSubmitDealer()" class="btn add_button" data-dismiss="modal" type="button">{{data.mode =="add" ?"Add":"Edit"}}</button>
+                <button  class="btn close_button" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </form>
+        <ng-container *ngIf="bulkUpload">
+            <app-file-upload   (uploaded)="onUpload($event)"></app-file-upload>
+        </ng-container> 
+    </div>
+</div>

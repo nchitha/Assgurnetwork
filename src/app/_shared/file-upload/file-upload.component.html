@@ -1,0 +1,22 @@
+<div class="drop-area" *ngIf="!isFileUploaded" (drop)="onFileDrop($event)" (dragover)="allowDrop($event)">
+    <label for="fileElem">
+      <img src="assets/images/cloud_upload.svg">
+    </label>
+  
+    <input type="file" id="fileElem" #fileInput (change)="onFileChange($event)">
+    <div>
+      <button *ngIf="!isFileUploaded" class="btn btn-default btn-main" (click)="fileInput.click()" id="upload_button">
+        Choose File to Upload
+      </button>
+  
+    </div>
+    <!-- <label class="button" for="fileElem">Select some files</label> -->
+    <p class="mt-20"><strong>or drag and drop them here</strong> </p>
+  </div>
+  <div class="drop-area" *ngIf="isFileUploaded">
+    <div class="my-form shaded-back">
+      <p>{{fileSize}}</p>
+      <p>{{fileName}}</p>
+    </div>
+  </div>
+  

@@ -25,5 +25,43 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
     .pop-body{
         padding:14px;
+        max-height: 414px;
+        overflow: scroll;
+        overflow: auto;
     }
+}
+
+.nopadding{
+    padding:0px;
+    overflow: hidden;
+}
+
+.redAlert{
+    background-color:rgb(117, 21, 21) !important;
+    
+    .mat-button-wrapper{
+        color:#fff;
+    }
+}
+
+.yellowAlert{
+    background-color:#7e5f02 !important;
+    .mat-button-wrapper{
+        color:#fff;
+    }
+}
+
+.greenAlert{
+    background-color:#0d680d !important;
+    .mat-button-wrapper{
+        color:#fff;
+    }
+}
+
+.crt-button{
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    padding-right: 15px;
+    padding-top: 10px;
 }

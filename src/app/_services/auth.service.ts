@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {  HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from "ngx-bootstrap-spinner";
-import { map,tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 @Injectable({
@@ -11,27 +10,29 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   constructor( private http: HttpClient,private spinner: NgxSpinnerService) { }
 
-  login(credentials: any): Observable<any> {
-    const headers = new HttpHeaders({
-      'Accept': '*/*', 'Content-Type': 'application/json;charset=utf-8'
-    });
-
-    let body = new URLSearchParams();
+  login(credentials: any) {
 
     let params = {
-      // grant_type: "password",
       email : credentials.username,
-      password: credentials.password,
-      // client_id: "maruthi-suzuki",
-      // client_secret: "test",
-      // scope: ""
+      password: credentials.password
     }
 
-    // Object.keys(params).forEach(key => {
-    //   body.set(key, params[key]);
-    // });
     this.spinner.show();
-    return this.http.post(`${environment.apiUrl}/user/login`, params, { headers: headers })
+    return this.http.post(`${environment.apiUrl}/user/login`, params)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  refreshToken() {
+
+    const refresh_token = localStorage.getItem('refresh_token');
+    this.spinner.show();
+    return this.http.post(`${environment.apiUrl}/user/refresh-token`, {refreshToken: refresh_token})
     .pipe(tap(data => {
       this.spinner.hide();
       return data;

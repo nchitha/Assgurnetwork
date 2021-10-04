@@ -1,3 +1,27 @@
+
+header{
+    background-color: #e44838;
+    height: 63px;
+    .navbar-nav{
+        a{
+            padding-bottom: 13px;   
+            color: #fff;
+            .mat-icon{
+                position: relative;
+                top: 5px;
+            }
+        }
+        a.active{
+            color: white;
+            background: #c52a1a;
+            border-radius: 9px;
+        }
+    }
+    .navbar-collapse{
+        justify-content: center;
+    }
+}
+
 .dashboard_link{
     color:#fff;
     margin-left:5px;
@@ -7,8 +31,20 @@
     cursor: pointer;
 }
 
+.logo {
+    height: 63px;
+    background-color: #c52a1a;
+    padding-top: 10px;
+
+    img{
+        margin-left: 40px;
+        width: 183px;
+    }
+} 
+
 .users{
     float:right;
+    top: 6px;
     .mat-icon{
         color:#fff;
         font-size: 38px;
