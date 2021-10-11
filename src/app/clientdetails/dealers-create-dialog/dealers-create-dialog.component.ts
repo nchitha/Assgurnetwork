@@ -55,17 +55,26 @@ export class DealersCreateDialogComponent implements OnInit {
       }, (err:any) => {
       
       });
-   }else{
-    this.commonService.updateDealers(this.dealerForm.value,this.data.item.dealer_id).subscribe((data:any) => {
-      this.dealerForm.reset();
-      this._snackBar.open(data.message, 'Close',{
-        duration: 3000,
-        panelClass: ["greenAlert"]
+    }else{
+      let investorsName = "";
+      this.investors.map((value)=>{
+        console.log(value.id,this.dealerForm.value.investors);
+        if(value.id == this.dealerForm.value.investors){
+          
+          investorsName =  value.investorName
+          return;
+        }
+      })
+      this.commonService.updateDealers(this.dealerForm.value,this.data.item.dealer_id,investorsName).subscribe((data:any) => {
+        
+        this._snackBar.open(data.message, 'Close',{
+          duration: 3000,
+          panelClass: ["greenAlert"]
+        });
+      }, (err:any) => {
+      
       });
-    }, (err:any) => {
-    
-    });
-  }
+    }
   }
 
   onUpload(event: any) {

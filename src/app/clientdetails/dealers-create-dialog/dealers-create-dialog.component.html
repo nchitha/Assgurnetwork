@@ -9,7 +9,7 @@
         <span  class="upload_data" (click)="isBulkUpload(false)">Single Creation</span>
         <span  class="upload_data" *ngIf="data.mode =='add'" (click)="isBulkUpload(true)">Bulk Upload</span>
     </div>
-    <div  class="padd_10" >
+    <div>
         <form  [formGroup]="dealerForm" *ngIf="!bulkUpload">
             <div  class="form-group dealer-group">
                 <label  for="dealer">Dealer Name: </label>
@@ -18,7 +18,7 @@
             <div  class="form-group dealer-group">
                 <label  for="dealer">Investor Name: </label>
                 <select class="form-control" formControlName="investors">
-                    <option *ngFor="let investor of investors"  [value]="investor.id" >
+                    <option *ngFor="let investor of investors"  [value]="investor.id">
                         {{ investor.investorName }}
                     </option>
                 </select>
@@ -33,7 +33,7 @@
             </div>
             <div  class="modal-footer">
                 <button [disabled]="dealerForm.invalid" (click)="onSubmitDealer()" class="btn add_button" data-dismiss="modal" type="button">{{data.mode =="add" ?"Add":"Edit"}}</button>
-                <button  class="btn close_button" data-dismiss="modal" type="button">Close</button>
+                <button  class="btn close_button" data-dismiss="modal" type="button"  [mat-dialog-close]="true">Close</button>
             </div>
         </form>
         <ng-container *ngIf="bulkUpload">

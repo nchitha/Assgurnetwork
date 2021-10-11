@@ -6,36 +6,41 @@
 </div>
 <div class="crt-button"><button class="btn create-btn" (click)="createClient($event)">Create New</button></div>
 <div class="pop-body"  id="scroll" data-simplebar>
-    <div class="table-container">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of items;let i=index">
-              <td><span *ngIf="(!editItems || isSelectedItemRow!=i) && type == 'Investors'">{{item.investorName}}</span>
-                <span *ngIf="type == 'Dealers'">{{item.dealer_name}}</span>
-                <input class="txt-width"
-                  type="text" *ngIf="editItems && isSelectedItemRow==i && type == 'Investors'" [(ngModel)]="editedItemName" />
-                </td>
-              <td>
-                <span>
-                  <img src="assets/images/edit.svg"  *ngIf="!editItems || isSelectedItemRow!=i" class="align-right1"
-                    (click)="editItem(i,item)" /></span>
-                    <span *ngIf="editItems && isSelectedItemRow==i">
-                    <button
-                    (click)="editItems=false;updateItem(item,editedItemName)" class="btn main-btn">Update</button>
-                    <button (click)="editItems=false"
-                    class="btn sec-btn close-icon">Cancel</button>
-                  </span>
-              </td>
-              <td><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th *ngIf="type != 'Engagements'"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items;let i=index">
+          <td><span *ngIf="(!editItems || isSelectedItemRow!=i) && type == 'Investors'">{{item.investorName}}</span>
+            <span *ngIf="type == 'Dealers'">{{item.dealer_name}}</span>
+            <span *ngIf="type == 'Outlets'">{{item.storeName}}</span>
+            <span *ngIf="type == 'Engagements'">{{item.engagement_name}}</span>
+            <input class="txt-width"
+              type="text" *ngIf="editItems && isSelectedItemRow==i && type == 'Investors'" [(ngModel)]="editedItemName" />
+            </td>
+          <td  *ngIf="type != 'Engagements'">
+            <span>
+              <img src="assets/images/edit.svg"  *ngIf="!editItems || isSelectedItemRow!=i" class="align-right1"
+                (click)="editItem(i,item)" /></span>
+                <span *ngIf="editItems && isSelectedItemRow==i">
+                <button
+                (click)="editItems=false;updateItem(item,editedItemName)" class="btn main-btn">Update</button>
+                <button (click)="editItems=false"
+                class="btn sec-btn close-icon">Cancel</button>
+              </span>
+          </td>
+          <td *ngIf="type != 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
+          </td>
+          <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">remove_red_eye</mat-icon></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

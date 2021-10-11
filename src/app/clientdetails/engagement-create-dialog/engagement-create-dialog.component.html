@@ -1,0 +1,90 @@
+<div class="pop-header">
+    <span class="pop-header-text">Creeate New Engagement</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body" data-simplebar>
+  <form class="row" [formGroup]="engForm">
+    <div class="col-md-4 padding-50">
+      <div class="form-group">
+        <mat-form-field>
+          <input type="text" matInput formControlName="name" placeholder="Engagement name">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" formControlName="startDate" placeholder="Start Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" formControlName="endDate" placeholder="End Date">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Version</mat-label>
+          <mat-select  formControlName="version">
+            <mat-option *ngFor="let version of versionDropdown" [value]="version.value"> {{version.name}} </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h4 class="align-center">Sales Checklist</h4>
+      <div class="drop-area" *ngIf="!isFileUploaded" (drop)="onFileChange($event)" (dragover)="allowDrop($event)">
+          <label for="fileElem">
+            <img src="assets/images/cloud_upload.svg">
+          </label>
+
+          <p class="mt-20"><strong class="align-center">or drag and drop them here</strong> </p>
+      </div>
+      <div class="drop-area" *ngIf="isFileUploaded">
+        <div class="my-form shaded-back">
+          <p>{{fileSize}}</p>
+          <p style="white-space: pre-wrap;">{{fileName}}</p>
+        </div>
+      </div>
+
+      <div class="ta-c">
+        <input type="file" class="fileElem" formControlName="salesCheck" #fileInput (change)="onFileChange($event)">
+        <button type="button" *ngIf="!isFileUploaded" class="btn btn-default btn-main" (click)="fileInput.click()"
+          id="upload_button">Upload
+          File <img src="assets/images/upload_file.svg" alt=""></button> 
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h4 class="align-center">Aftersales Checklist</h4>
+      <div class="drop-area" *ngIf="!isFileUploaded1" (drop)="onFileChange1($event)" (dragover)="allowDrop($event)">
+          <label for="fileElem">
+            <img src="assets/images/cloud_upload.svg">
+          </label>
+
+          <p class="mt-20"><strong class="align-center">or drag and drop them here</strong> </p>
+      </div>
+      <div class="drop-area" *ngIf="isFileUploaded1">
+        <div class="my-form shaded-back">
+          <p>{{fileSize1}}</p>
+          <p style="white-space: pre-wrap;">{{fileName1}}</p>
+        </div>
+      </div>
+
+      <div class="ta-c">
+        <input type="file" class="fileElem" formControlName="afterSalesCheck" #fileInput1 (change)="onFileChange1($event)">
+        <button type="button" *ngIf="!isFileUploaded1" class="btn btn-default btn-main" (click)="fileInput1.click()"
+          id="upload_button">Upload
+          File <img src="assets/images/upload_file.svg" alt=""></button> 
+      </div>
+    </div>
+  </form>
+  <div  class="modal-footer">
+    <button  class="btn close_button" data-dismiss="modal" type="button" [mat-dialog-close]="true">Cancel</button>
+    <button type="submit" (click)="onSubmit()" class="btn add_button" data-dismiss="modal" type="button ">Create</button>
+  </div>
+</div>
+

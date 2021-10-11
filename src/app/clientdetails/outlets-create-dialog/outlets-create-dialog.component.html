@@ -1,0 +1,64 @@
+<div class="pop-header">
+    <span class="pop-header-text">{{data.mode =="add" ?"Add":"Edit"}} Outlets</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body" data-simplebar>
+    <div  class="single_bulk">
+        <span  class="upload_data" (click)="isBulkUpload(false)">Single Creation</span>
+        <span  class="upload_data" *ngIf="data.mode =='add'" (click)="isBulkUpload(true)">Bulk Upload</span>
+    </div>
+    <div>
+        <form  [formGroup]="outletForm" *ngIf="!bulkUpload">
+            <div  class="form-group outlet-group">
+                <label  for="outlet">Outlet Name: </label>
+                <input class="form-control margin-bottom" formControlName="outlet" placeholder="Enter outlet name" type="text">
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">Dealer Name: </label>
+                <select class="form-control" formControlName="dealers">
+                    <option *ngFor="let dealer of dealers"  [value]="dealer.dealer_name" >
+                        {{ dealer.dealer_name }}
+                    </option>
+                </select>
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">Outlet Type: </label>
+                <select class="form-control" formControlName="outletType">
+                    <option value="Showroom" >Showroom</option>
+                    <option value="Workshop" >Workshop</option>
+                </select>
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">City: </label>
+                <input class="form-control margin-bottom" formControlName="city" placeholder="Enter the city" type="text">
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">State: </label>
+                <input class="form-control margin-bottom" formControlName="state" placeholder="Enter the state" type="text">
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">Zone: </label>
+                <select class="form-control" formControlName="zone">
+                    <option value="North" >North</option>
+                    <option value="East" >East</option>
+                    <option value="West" >West</option>
+                    <option value="South" >South</option>
+                </select>
+            </div>
+            <div  class="form-group outlet-group">
+                <label  for="outlet">Address: </label>
+                <textarea class="form-control margin-bottom" formControlName="address" placeholder="Enter the outlet address" type="text">
+                </textarea>
+            </div>
+            <div  class="modal-footer">
+                <button [disabled]="outletForm.invalid" (click)="onSubmitOutlet()" class="btn add_button" data-dismiss="modal" type="button">{{data.mode =="add" ?"Add":"Edit"}}</button>
+                <button  class="btn close_button" data-dismiss="modal" type="button" [mat-dialog-close]="true">Close</button>
+            </div>
+        </form>
+        <ng-container *ngIf="bulkUpload">
+            <app-file-upload   (uploaded)="onUpload($event)"></app-file-upload>
+        </ng-container> 
+    </div>
+</div>

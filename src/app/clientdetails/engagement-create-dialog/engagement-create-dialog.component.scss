@@ -1,0 +1,65 @@
+.padding-50{
+    padding: 50px;
+    padding-bottom:0px;
+}
+
+.add_button {
+    background-color: #e86153;
+    border-color: #e86153;
+    color: #fff;
+    padding: 9px 24px;
+    font-size: 15px;
+    height: 50px;
+}
+
+.close_button {
+    border-color: #e44838;
+    padding: 9px 17px;
+    color: #e44838;
+    font-size: 15px;
+    height: 50px;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 400;
+}
+
+.drop-area {
+    border: 2px dashed #e44838;
+    margin: 50px 30px;
+    padding: 55px;
+    padding-bottom: 0px;
+}
+
+.fileElem {
+    visibility: hidden;
+}
+
+.btn-main {
+    background-color: #e86153;
+    border-color: #e86153;
+    color: #fff;
+    padding: 9px 24px;
+    font-size: 15px;
+    height: 50px;
+}
+
+.ta-c {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.drop-area label{
+    display: flex;
+    justify-content: center;
+}
+
+.drop-area .shaded-back{
+    padding: 20px;
+    background-color: #ececec;
+    border-radius: 20px;
+    text-align: center;
+}

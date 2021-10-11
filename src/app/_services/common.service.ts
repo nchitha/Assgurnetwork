@@ -45,6 +45,7 @@ export class CommonService {
   }
 
   deleteDealers(id: any){
+    this.spinner.show();
     return this.http.delete(`${environment.apiUrlAdmin}/dealerNew/deleteDealer/${id}`)
     .pipe(tap(data => {
       this.spinner.hide();
@@ -58,7 +59,7 @@ export class CommonService {
     let params = {
       dealer_name : dealers.dealer,
       dealer_category:dealers.dealerCategory,
-      investor_id:dealers.investors,
+      investor_id:dealers.engagement,
       dealer_code:dealers.dealerCode
     }
     this.spinner.show();
@@ -72,15 +73,15 @@ export class CommonService {
 
   }
 
-  updateDealers(dealers: any,id: any) {
+  updateDealers(dealers: any,id: any,investorsName:any) {
     let params = {
       dealer_name : dealers.dealer,
       dealer_category:dealers.dealerCategory,
-      investor_id:dealers.investors,
+      investor_name:investorsName,
       dealer_code:dealers.dealerCode
     }
     this.spinner.show();
-    return this.http.post(`${environment.apiUrlAdmin}dealerNew/updateDealer/${id}`, params)
+    return this.http.put(`${environment.apiUrlAdmin}dealerNew/updateDealer/${id}`, params)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -146,6 +147,7 @@ export class CommonService {
   }
 
   deleteInvestors(id: any){
+    this.spinner.show();
     return this.http.delete(`${environment.apiUrlAdmin}/investor/${id}`)
     .pipe(tap(data => {
       this.spinner.hide();
@@ -167,6 +169,116 @@ export class CommonService {
     },error => {
       this.spinner.hide();
     }));
+  }
+
+  getOutlets() {
+    this.spinner.show();
+    return this.http.get<any>(`${environment.apiUrlAdmin}/store/getAllStores`)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  addOutlets(outlet: any) {
+    let params = {
+      dealerName : outlet.dealers,
+      storeName:outlet.outlet,
+      storeType:outlet.outletType,
+      address:outlet.address,
+      city:outlet.city,
+      state:outlet.state,
+      zone:outlet.zone
+    }
+    this.spinner.show();
+    return this.http.post(`${environment.apiUrlAdmin}/store/addStore`, params)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  editOutlet(outlet: any,storeId:any) {
+    let params = {
+      dealerName : outlet.dealers,
+      storeName:outlet.outlet,
+      storeType:outlet.outletType,
+      address:outlet.address,
+      city:outlet.city,
+      state:outlet.state,
+      zone:outlet.zone
+    }
+    this.spinner.show();
+    return this.http.put(`${environment.apiUrlAdmin}store/updateStore/${storeId}`, params)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  deleteOutlets(id: any){
+    this.spinner.show();
+    return this.http.delete(`${environment.apiUrlAdmin}/store/deleteStore/${id}`)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+  }
+
+  uploadOutlets(event: any) {
+    const formdata = new FormData();
+    formdata.append('stores', event);
+    this.spinner.show();
+    return this.http.post(`${environment.apiUrlAdmin}/store/bulkUpload`, formdata)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  getEngagements() {
+    this.spinner.show();
+    return this.http.get<any>(`${environment.apiUrlAdmin}/engagement/all/new`)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  addEngagement(engagement: any,file:any,file1:any) {
+    const formdata = new FormData();
+    formdata.append('sales', file);
+    formdata.append('afterSales', file1);
+    formdata.append('engagementName', engagement.name);
+    formdata.append('engagementStartDate', engagement.startDate);
+    formdata.append('engagementEndDate', engagement.endDate);
+    formdata.append('version', engagement.version);
+    this.spinner.show();
+    return this.http.post(`${environment.apiUrlAdmin}/engagement`, formdata)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
   }
 }
 

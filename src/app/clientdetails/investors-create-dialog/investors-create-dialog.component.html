@@ -9,7 +9,7 @@
         <span  class="upload_data" (click)="isBulkUpload(false)">Single Creation</span>
         <span  class="upload_data" (click)="isBulkUpload(true)">Bulk Upload</span>
     </div>
-    <div  class="padd_10">
+    <div  >
         <form  [formGroup]="investorForm" *ngIf="!bulkUpload">
             <div  class="form-group inversor-form">
                 <label  for="investor">Investor Name: </label>
@@ -17,7 +17,7 @@
             </div>
             <div  class="modal-footer">
                 <button [disabled]="investorForm.invalid" (click)="onSubmitInvestor()" class="btn add_button" data-dismiss="modal" type="button">Add</button>
-                <button  class="btn close_button" data-dismiss="modal" type="button">Close</button>
+                <button  class="btn close_button" data-dismiss="modal" type="button" [mat-dialog-close]="true">Close</button>
             </div>
         </form>
         <ng-container *ngIf="bulkUpload">
