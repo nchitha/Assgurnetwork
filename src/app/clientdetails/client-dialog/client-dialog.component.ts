@@ -1,5 +1,5 @@
 import { Component, OnInit,Inject } from '@angular/core';
-import { MatDialog,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog,MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 import { InvestorsCreateDialogComponent } from '../investors-create-dialog/investors-create-dialog';
 import { CommonService } from './../../_services/common.service';
 import { first } from 'rxjs/operators';
@@ -7,7 +7,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { DealersCreateDialogComponent } from '../dealers-create-dialog/dealers-create-dialog.component';
 import { OutletsCreateDialogComponent } from '../outlets-create-dialog/outlets-create-dialog.component';
 import { EngagementCreateDialogComponent } from '../engagement-create-dialog/engagement-create-dialog.component';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-client-dialog',
   templateUrl: './client-dialog.component.html',
@@ -21,7 +21,7 @@ export class ClientDialogComponent implements OnInit {
   type:any = "";
   constructor(public dialog: MatDialog, private commonService:CommonService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,private dialogRef: MatDialogRef<ClientDialogComponent>, private router: Router) { }
 
   ngOnInit(): void {
     this.type = this.data.type;
@@ -173,6 +173,11 @@ export class ClientDialogComponent implements OnInit {
       });
       this.fetch();
     });
+  }
+
+  redirectEngagement(){
+    this.router.navigate(['app/engagement']);
+    this.dialogRef.close("engagementClose");
   }
 
 }

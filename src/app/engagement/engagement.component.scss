@@ -1,0 +1,43 @@
+.engagement-box{
+    margin-top:10px;
+}
+
+.eng-card{
+    background-image: linear-gradient(to right, #E44838 , brown);
+    height: 151px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 83%;
+    transition: transform .2s;
+    color: white;
+    white-space: pre-wrap;
+    padding-left: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+    .eng_id{
+        margin-top: 28px;
+    }
+    .strt-date {
+        line-height: 27px;
+        padding-left: 6px;
+    }
+    .eng-row {
+        position: relative;
+        top: -17px;
+    }
+    .eng_name{
+        margin-top:17px;
+    }
+    .calendar_date{
+        margin-top: 39px;
+    }
+
+    .mat-icon{
+        margin-left: 11px;
+    }
+}
+
+.eng-card:hover {
+    box-shadow: 0 1px 2px 1px rgba(142,145,147,.8);
+    cursor: pointer;
+  }

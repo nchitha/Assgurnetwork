@@ -10,6 +10,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
  imports: [
 	CommonModule,
@@ -20,7 +22,8 @@ import {MatSelectModule} from '@angular/material/select';
   MatFormFieldModule,
   MatNativeDateModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSnackBarModule
   ],
   providers: [  
     MatMomentDateModule,
@@ -35,7 +38,8 @@ import {MatSelectModule} from '@angular/material/select';
   MatFormFieldModule,
   MatNativeDateModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSnackBarModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

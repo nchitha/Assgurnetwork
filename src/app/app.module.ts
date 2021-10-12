@@ -15,7 +15,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './_shared/shared.module';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { HttpRequestInterceptor } from './HttpRequestInterceptor';
 
 @NgModule({
@@ -34,8 +34,7 @@ import { HttpRequestInterceptor } from './HttpRequestInterceptor';
     DashboardModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    SharedModule,
-    MatSnackBarModule
+    SharedModule
   ],
   providers: [
     AuthService,

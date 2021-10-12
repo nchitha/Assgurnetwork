@@ -36,7 +36,9 @@ export class ClientdetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe( (result:any) => {
-      this.fetch();
+      if(result !='engagementClose'){
+        this.fetch();
+      }
     });
   }
 

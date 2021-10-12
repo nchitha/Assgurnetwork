@@ -1,0 +1,32 @@
+<div class="container-fluid engagement-box">
+    <div class="row">
+        <div *ngFor="let engagement of engagements;let i=index" class="col-sm-3">
+            <div class="eng-card">
+                <div class="row">
+                    <div class="col-md-4 eng_id">
+                      ID: {{engagement.id}}
+                    </div>
+                    <div class="col-md-8 calendar_date">
+                      <div class="col-md-2">
+                        <small><mat-icon>calendar_today</mat-icon></small>
+                      </div>
+                      <div class="col-md-10 strt-date">
+                        {{engagement.engagement_start_date | date}}
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="row eng-row">
+                    <div class="col-md-9">
+                      <p class="eng_name">
+                        {{engagement.engagement_name}}
+                      </p>
+                    </div>
+                    <div class="col-md-3">
+          
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
