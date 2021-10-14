@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from 'src/app/_services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input() page = '';
-  constructor(private router: Router) { }
+  roleId:any = 0;
+  constructor(private router: Router,private commonService:CommonService) { }
 
   ngOnInit(): void {
+    this.roleId = this.commonService.getUser()['roleId'];
   }
 
   profile(){

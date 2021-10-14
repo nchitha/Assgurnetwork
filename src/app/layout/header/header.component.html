@@ -3,15 +3,18 @@
                 <div class="logo col-sm-2">
                         <img src="assets/images/CPAT2.png">
                 </div>
-                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page == 'engagement'">
+                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="roleId == 2">
+
+                </nav>
+                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page == 'engagement' && roleId == 1">
                         <div>
                                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                         <div class="navbar-nav">
-                                                <a class="nav-item nav-link" routerLink="/app/engagement" [routerLinkActive]="['active']">
+                                                <a class="nav-item nav-link" routerLink="/app/engagement" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
                                                         <mat-icon>bar_chart</mat-icon>
                                                         Dashboard
                                                 </a>
-                                                <a class="nav-item nav-link" routerLink="/app/clientdetails" [routerLinkActive]="['active']">
+                                                <a class="nav-item nav-link" routerLink="/app/engagement/schedule-list" [routerLinkActive]="['active']">
                                                         <mat-icon>calendar_today</mat-icon>
                                                         Scheduling and Reminder
                                                 </a>
@@ -23,7 +26,7 @@
                                 </div> 
                         </div>
                 </nav>
-                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page != 'engagement'">
+                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page != 'engagement' && roleId == 1">
                         
                         <div>
                                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">

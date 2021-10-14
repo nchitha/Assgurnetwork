@@ -280,6 +280,10 @@ export class CommonService {
     }));
 
   }
+
+  getUser(){
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
 }
 
 

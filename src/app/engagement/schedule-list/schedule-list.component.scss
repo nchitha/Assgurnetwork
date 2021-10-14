@@ -1,0 +1,32 @@
+.schedule-list {
+
+    .heading {
+      text-align: center;
+      padding: 10px;
+  
+      span {
+        padding: 10px;
+        border-bottom: 1px solid #999999;
+      }
+  
+      .bor-btm {
+        border-bottom: 1px solid red;
+        color: red;
+      }
+    }
+  
+    .create {
+      float: right;
+  
+      button {
+        margin-bottom: 10px;
+        margin-right: 20px;
+      }
+    }
+  
+  }
+  
+  .table-container .table > tbody > tr > td {
+    padding-left: 8px !important;
+  }
+  

@@ -1,0 +1,33 @@
+<div class="schedule-list">
+    <div class="heading">
+      <span [ngClass]="{'bor-btm': !headActive}" (click)="headActive = false; getTasks('new')">Scheduled</span>
+      <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('saved')">Completed</span>
+    </div>
+    <div class="create">
+      <button class="btn btn-default btn-main" (click)="onCreate()">CREATE</button>
+    </div>
+  
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Outlet</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Auditor</th>
+            <th>Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{task.storeName}}</td>
+            <td>{{task.cityName}}</td>
+            <td>{{task.state}}</td>
+            <!-- <td>{{task.model}}</td> -->
+            <td>{{task.mystry_shopper}}</td>
+            <td>{{task.dateOfResponse}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

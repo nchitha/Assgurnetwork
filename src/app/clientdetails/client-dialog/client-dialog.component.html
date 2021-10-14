@@ -37,7 +37,7 @@
           </td>
           <td *ngIf="type != 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
           </td>
-          <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal" (click)="redirectEngagement()" >remove_red_eye</mat-icon></span>
+          <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal" (click)="redirectEngagement(item)" >remove_red_eye</mat-icon></span>
           </td>
         </tr>
       </tbody>

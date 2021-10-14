@@ -69,3 +69,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-datepicker-toggle-default-icon{
     color:#c52a1a;
 }
+
+.table-container thead {
+    background-color: #e86153;
+    color: #fff;
+    border: 1px solid #e86153;
+    padding: 20px;
+}
+
+.schedule-list{
+    padding:10px;
+}
+
+.btn-main {
+    background-color: #e86153;
+    border-color: #e86153;
+    color: #fff;
+    padding: 9px 24px;
+    font-size: 15px;
+    height: 50px;
+}

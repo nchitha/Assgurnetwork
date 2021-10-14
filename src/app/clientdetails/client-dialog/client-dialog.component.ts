@@ -8,6 +8,7 @@ import { DealersCreateDialogComponent } from '../dealers-create-dialog/dealers-c
 import { OutletsCreateDialogComponent } from '../outlets-create-dialog/outlets-create-dialog.component';
 import { EngagementCreateDialogComponent } from '../engagement-create-dialog/engagement-create-dialog.component';
 import {Router} from '@angular/router';
+import { EngagementService } from '../../_services/engagement.service';
 @Component({
   selector: 'app-client-dialog',
   templateUrl: './client-dialog.component.html',
@@ -21,7 +22,7 @@ export class ClientDialogComponent implements OnInit {
   type:any = "";
   constructor(public dialog: MatDialog, private commonService:CommonService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _snackBar: MatSnackBar,private dialogRef: MatDialogRef<ClientDialogComponent>, private router: Router) { }
+    private _snackBar: MatSnackBar,private dialogRef: MatDialogRef<ClientDialogComponent>, private router: Router, private engagementService: EngagementService) { }
 
   ngOnInit(): void {
     this.type = this.data.type;
@@ -175,7 +176,8 @@ export class ClientDialogComponent implements OnInit {
     });
   }
 
-  redirectEngagement(){
+  redirectEngagement(eng:any){
+    this.engagementService.setCurEnggLocal(eng);
     this.router.navigate(['app/engagement']);
     this.dialogRef.close("engagementClose");
   }
