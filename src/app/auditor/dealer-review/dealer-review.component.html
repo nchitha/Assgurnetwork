@@ -1,0 +1,160 @@
+<div class="container-fluid questionnaire-container">
+    <div class="dealer review">
+        <div class="container-fluid">
+            <div class="row menu-strip" style="height: 50px;">
+                <div class="col-md-1 col-lg-1"><b>Area Level</b></div>
+                <div class="col-md-5 col-lg-5">
+                  <ng-multiselect-dropdown
+                    [placeholder]="'Select Category'"
+                    [settings]="dropdownCategorySettings"
+                    [data]="categoryArray"
+                    [(ngModel)]="defaultCategorySelected"
+                    (onSelectAll)="category($event,'selectall')"
+                    (onDeSelect)="category($event,'deselectone')" (onDeSelectAll)="category($event,'deselectall')"
+                  >
+                  </ng-multiselect-dropdown>
+                </div>
+                <div class="col-md-1 col-lg-1"><b>Bucket Level</b></div>
+                <div class="col-md-5 col-lg-5">
+                  <ng-multiselect-dropdown
+                    [placeholder]="'Select Category'"
+                    [settings]="dropdownBucketSettings"
+                    [data]="bucketArr"
+                    [(ngModel)]="defaultBucketSelected"
+                    (onSelectAll)="bucket($event,'selectall')"
+                    (onDeSelect)="bucket($event,'deselectone')" (onDeSelectAll)="bucket($event,'deselectall')"
+                  >
+                  </ng-multiselect-dropdown>
+                </div>
+              </div>
+              <div class="row menu-strip">
+                <div class="col-md-2 col-lg-2">
+                  <b> KPI Marked as No</b>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                  <div class="switch">
+                    <p class="switch-cont"><b></b></p>
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                  <b> Quick wins</b>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                  <div class="switch">
+                    <p class="switch-cont"><b></b></p>
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </div>
+                </div>
+              </div>
+              <div style="color: #E44838; font-size:20px;" *ngIf="!defaultCategorySelected.length || !defaultBucketSelected.length">
+                No Data Available
+            </div>
+            <div class="date-fields row">
+                <div class="form-group col-sm-3">
+                    <label for="exampleInputEmail1" class="color">Meeting Date</label><br>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="meeting_date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Meeting Date"> -->
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="exampleInputPassword1">Participants</label>
+                    <textarea class="form-control" id="exampleInputPassword1" placeholder="Participants"></textarea>
+                </div>
+
+                <div *ngIf="defaultCategorySelected.length && defaultBucketSelected.length" class=" ">
+                    <div class="table-container" id="scroll" data-simplebar style="max-height:386px">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                  <th>KPI Number</th>
+                                  <th>KPI Description</th>
+                                  <th>Response</th>
+                                  <th>Current State</th>
+                                  <th>Root Cause</th>
+                                  <th>Action Plan</th>
+                                  <th>Responsibility</th>
+                                  <th>Time Line</th>
+                                  <th>Quick Win</th>
+                                  <th>View Evidences</th>
+                                  <th>Upload Evidences</th>
+                                  <th>Submit Details</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                              <td>
+                                <p>3.01 </p>
+                              </td>
+                              <td>
+                                <p>The dealership grounds/premises from the outside is well maintained</p>
+                              </td>
+                              <td>
+                                <span>
+                                  <select id="dropdown">
+                                    <option *ngFor="let opt of options"  [value]="opt.name">
+            
+                                      {{opt.name}}</option>
+                                  </select>
+                                </span>
+                              </td>
+                              <td>
+                                <span>
+                                  <input  type="text"/>
+                                </span>
+                              </td>
+                              <td>
+                                <span>
+                                  <input  type="text"/>
+                                </span>
+                              </td>
+                              <td>
+                                <span>
+                                  <input  type="text"/>
+                                </span>
+                              </td>
+                              <td>
+                                <span>
+                                  <input  type="text"/>
+                                </span>
+                              </td>
+                              <td>
+                                <span>
+                                  <mat-form-field>
+                                    <input matInput [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                  </mat-form-field>
+                                </span>
+                              </td>
+                              <td class="center-align">
+                                <span>
+                                  <mat-icon style="font-size:18px ; color: #E44838">wine_bar</mat-icon>
+                                </span>
+                              </td>
+                              <td class="text-align">
+                                <span>
+                                  <mat-icon style="font-size:18px ; color: #E44838">remove_red_eye</mat-icon>
+                                </span>
+                              </td>
+                              <td class="text-align">
+                                <span>
+                                  <mat-icon style="font-size:18px ; color: #E44838">file_upload</mat-icon>
+                                </span>
+                              </td>
+                              <td class="text-align">
+                                <span>
+                                  <mat-icon style="font-size:18px ; color: #E44838">done</mat-icon>
+                                </span>
+                              </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-publish">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

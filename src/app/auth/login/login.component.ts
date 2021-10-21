@@ -32,7 +32,11 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("access_token", data.access_token);
       localStorage.setItem("refresh_token", data.refresh_token);
       localStorage.setItem("user", JSON.stringify(data));
-      this.router.navigate(['/app/dashboard']);
+      if(data.roleId == 1){
+        this.router.navigate(['/app/dashboard']);
+      }else if(data.roleId == 2){
+        this.router.navigate(['/app/auditor']);
+      }
 
     }, (err:any) => {
       this._snackBar.open(err.error.message, 'Close',{

@@ -8,10 +8,10 @@ const routes: Routes = [
         path: 'app', component: HomeLayoutComponent,
         children: [
           { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-          { path: 'clientdetails', loadChildren: () => import('./clientdetails/clientdetails.module').then(m => m.ClientdetailsModule) },
-          { path: 'engagement', loadChildren: () => import('./engagement/engagement.module').then(m => m.EngagementModule) }
+          { path: 'engagement', loadChildren: () => import('./engagement/engagement.module').then(m => m.EngagementModule) },
+          { path: 'auditor', loadChildren: () => import('./auditor/auditor.module').then(m => m.AuditorModule) },
         ]
-    },
+    }
   
 ];
 

@@ -1,0 +1,63 @@
+.questionnaire-container{
+
+    .menu-strip {
+        background: #ccc;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    ::ng-deep{
+        .mat-progress-bar-buffer {
+            background-color:#dfd8d8 !important;
+        }
+        
+        .mat-progress-bar-fill::after {
+            background-color: #E44838 !important;
+        }
+        .dropdown-btn{
+            background: #fff;
+        }
+    }
+
+    .switch{
+        position: relative;
+        top: -7px;
+    }
+
+    .date-fields {
+        padding: 11px;
+    }
+    .form-group label {
+        color: #e44838;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .data-center input {
+        height: 36px;
+    }
+
+    .btn-publish{
+      float: right;
+      background: #E44838 !important;
+      margin-top: 15px;
+      color: white;
+    }
+
+    .table-kpi{
+        margin-top:11px;
+    }
+
+    .center-align{
+        text-align: center;
+    }
+
+    .text-align{
+        text-align:center;
+    }
+    
+
+}

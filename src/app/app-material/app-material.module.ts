@@ -11,6 +11,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
  imports: [
@@ -23,7 +25,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   MatNativeDateModule,
   MatInputModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule,
+  MatSlideToggleModule
   ],
   providers: [  
     MatMomentDateModule,
@@ -39,7 +43,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   MatNativeDateModule,
   MatInputModule,
   MatSelectModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule,
+  MatSlideToggleModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -1,0 +1,32 @@
+<div class="row audior-home" *ngIf="datas">
+    <div class="col-sm-3 card" *ngFor="let data of datas" (click)="onSelectAuditList(data)">
+        <div class="auditor-card card">
+            <div class="card-body">
+            <div class="card-row-1">
+                <div>
+                <label id="{{ data.auditorTask_pkid }}" class="text-muted-rowitem ellipsis" rel="popover"
+                    data-placement="bottom" data-trigger="hover"><small class="due-date">ID: {{ data.audit_pkId }}</small></label>
+                </div>
+                <div>
+                <label id="{{ data.due_date }}" class="text-muted-rowitem ellipsis float-right" rel="popover"
+                    data-placement="bottom" data-trigger="hover"><small class="due-date">
+                    <mat-icon class="date_range">date_range</mat-icon>
+                    {{data.dueDate | date: 'shortDate'}}</small></label>
+                </div>
+            </div>
+            <div class="row title-box">
+                <label class="card-title" style="white-space: pre-wrap !important">
+                <h4 id="{{ data.store_name }}" class="card-subtitle mb-1 mt-1 font-weight-normal" rel="popover"
+                    data-placement="bottom" data-trigger="hover">
+                    {{ data.store_name }}
+                </h4>
+                <small> </small>
+                </label>
+            </div>
+            <div class="row inforow">
+                <label class="text-muted-rowitem"><small>State: {{ data.store_city_name }}</small></label>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

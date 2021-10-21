@@ -1,0 +1,154 @@
+<div class="container questionnaire-container">
+  <div class="questionnaire">
+    <div class="text-align-center"><b>Unanswered questions: {{totalUnAns}}</b></div>
+    <div class="text-align-center"><b>Completion status: {{totalAns}}%</b></div>
+    <mat-progress-bar class="progress-bar-styling" mode="determinate" [value]="totalAns"></mat-progress-bar>
+  </div>
+  <div class="view_response mat-ripple-removed">
+    <div class="row menu-strip" style="height: 50px;">
+      <div class="col-md-1 col-lg-1"><b>Area Level</b></div>
+      <div class="col-md-5 col-lg-5">
+        <ng-multiselect-dropdown
+          [placeholder]="'Select Category'"
+          [settings]="dropdownCategorySettings"
+          [data]="categoryArray"
+          [(ngModel)]="defaultCategorySelected"
+          (onSelectAll)="category($event,'selectall')"
+          (onDeSelect)="category($event,'deselectone')" (onDeSelectAll)="category($event,'deselectall')"
+        >
+        </ng-multiselect-dropdown>
+      </div>
+      <div class="col-md-1 col-lg-1"><b>Bucket Level</b></div>
+      <div class="col-md-5 col-lg-5">
+        <ng-multiselect-dropdown
+          [placeholder]="'Select Category'"
+          [settings]="dropdownBucketSettings"
+          [data]="bucketArr"
+          [(ngModel)]="defaultBucketSelected"
+          (onSelectAll)="bucket($event,'selectall')"
+          (onDeSelect)="bucket($event,'deselectone')" (onDeSelectAll)="bucket($event,'deselectall')"
+        >
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="row menu-strip">
+      <div class="col-md-2 col-lg-2">
+        <b> KPI Marked as No</b>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <div class="switch">
+          <p class="switch-cont"><b></b></p>
+          <mat-slide-toggle [(ngModel)]="isMarkedChecked" (change)="changed('marked')"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <b> KPI Unanswered</b>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <div class="switch">
+          <p class="switch-cont"><b></b></p>
+          <mat-slide-toggle [(ngModel)]="isUnansweredChecked" (change)="changed('unanswered')"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <b> KPI Flagged for Review</b>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <div class="switch">
+          <p class="switch-cont"><b></b></p>
+          <mat-slide-toggle [(ngModel)]="isFlaggedChecked" (change)="changed('flagged')"></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+    <div style="color: #E44838; font-size:20px;"
+    *ngIf="!defaultCategorySelected.length || !defaultBucketSelected.length">
+      Please select atleast a category and atleast a bucket
+    </div>
+  </div>
+  <div class="ques-full" style="position:relative">
+    <div class="ques"><span>6.01) </span> <span>Audi Rings and Dealer Name letter signages are maintained by the dealership in good condition and are completely lit during the night</span></div>
+    <div class="form-group bin-element">
+      <label for="info">
+        <span data-toggle="modal" ><img class="info"
+            src="assets/images/info_fill_red.svg" /></span>
+      </label>
+      <label for="flag">
+        <img  class="info" src="assets/images/flag_red.svg"
+           />
+        <img class="info" src="assets/images/flag_grey.svg"/>
+      </label>
+      <span>
+        <img class="view" src="assets/images/view.svg" alt="viewEvidence">
+      </span>
+    </div>
+    <div class="opt-evd">
+      <div>
+        <span class="option border">
+          <button type="button"
+          class="btn selected"
+          ></button>
+        <label class="margin-left-3">Yes</label>
+        <button type="button"
+         
+          class="btn selected"
+         ></button>
+        <label class="margin-left-3">No</label>
+        <button type="button"
+         
+          class="btn selected"
+          ></button>
+          <label class="margin-left-3">N/A</label>
+        </span>
+        <div class="text-area">
+          <div class="root">
+            <span><b>Current State</b></span><br />
+            <!-- <input type="text"> -->
+            <textarea id="w3review" name="w3review" rows="4" cols="50" 
+              ></textarea>
+          </div>
+          <div class="root">
+            <span><b>Root Cause</b></span><br />
+            <!-- <input type="text"> -->
+            <textarea id="w3review" name="w3review" rows="4" cols="50"
+              ></textarea>
+          </div>
+
+          <div class="submit response">
+            <button class="mr-top">Submit</button>
+          </div>
+        </div>
+
+        <div class="display content">
+          <div class="">
+            <span class="color">Current State</span><br />
+            <div class="alignment"></div>
+          </div>
+          <div class="">
+            <span class="color">Root Cause</span><br />
+            <div class="alignment"></div>
+          </div>
+
+          <!-- <div class="edit">
+            <button class="edit-res" (click)="editResponse(question)">Edit</button>
+          </div> -->
+        </div>
+        <div> <label>Please upload the evidence:</label></div>
+        <div>
+          <form [formGroup]="uploadForm">
+            <div>
+              <input type="file" name="evidence"  multiple/>
+            </div>
+            <div class="padding-top">
+              <button type="submit" class="btn btn-default btn-main upload-btn">Upload</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="create-wrap">
+    <button class="btn btn-default btn-main margin-right" >Summary
+    </button>
+    <button class="btn btn-default btn-main">Dealer Review >
+    </button></div>
+</div>

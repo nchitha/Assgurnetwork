@@ -1,0 +1,151 @@
+.auditor-card {
+    border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      height: 100%;
+      background-image: linear-gradient(to right, #E44838 , brown);
+      
+      color: #fff;
+  
+    .card-body {
+      padding: 1rem;
+      padding-top: 0.5rem;
+      box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .15);
+      min-height: 165px;
+    }
+  
+    .card-body:hover {
+      box-shadow: 0 1px 2px 1px rgba(142,145,147,.8);
+      cursor: pointer;
+    }
+  
+    .card-title {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  
+    label.text-muted-rowitem {
+      color: #fff !important;
+      float: left;
+      margin-bottom: 0rem !important;
+      font-size: 150%;
+    }
+  
+    label.text-muted-rowitem:hover {
+      cursor: pointer;
+    }
+  
+    .title-box {
+      margin-top: 15px;
+    }
+  
+    .row.inforow {
+      margin-top: 30px;
+      padding-left: 15px;
+    }
+  
+    .row.title-box {
+      margin-bottom: 2px;
+      margin-right: 2px;
+      margin-left: 2px;
+      height: 15%;
+    }
+  
+    .card-subtitle.mb-1.mt-1.font-weight-normal.ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 100%;
+      cursor: pointer;
+    }
+  
+    .text-muted-rowitem {
+      &.ellipsis {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        height: 100%;
+        cursor: pointer;
+        width: 95%;
+      }
+    }
+  
+    .card-row-1 {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  
+    
+  .float-right{
+      float: right;
+  }
+  }
+  
+  
+  small.due-date {
+    font-size: 67%;
+  }
+  
+  h4.card-subtitle{
+    color:white;
+  }
+
+  .card{
+    margin-top: 30px;
+    border:none;
+}
+.row{
+  margin: 0px;
+}
+.panel-group {
+  margin-top: 30px;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .accordion-toggle.btn-link {
+    font-weight: 500 !important;
+    color: #E44838 !important;
+    text-decoration: none;
+    font-size:2rem !important;
+}
+
+// accordian css
+.color{
+  color: #E44838;
+}
+
+.inv-row {
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+// .mr-left {
+//   margin: 16px 10px 10px 31px;
+// }
+.dealer-row {
+  margin-left: 7rem;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+}
+.mr-0 {
+  margin: 13px 20px 0px 20px;
+  border: 1px solid #f2f2f2;
+  padding: 6px;
+}
+
+
+h4{
+    font-size: 18px;
+}

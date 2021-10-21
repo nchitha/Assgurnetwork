@@ -4,7 +4,20 @@
                         <img src="assets/images/CPAT2.png">
                 </div>
                 <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="roleId == 2">
-
+                        <div>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-item nav-link" routerLink="/app/auditor" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                                                        <mat-icon>home</mat-icon>
+                                                        Home
+                                                </a>
+                                                <a class="nav-item nav-link" routerLink="/app/auditor/review-outlets" [routerLinkActive]="['active']">
+                                                        <mat-icon>bar_chart</mat-icon>
+                                                        Dealer Review
+                                                </a>
+                                        </div>
+                                </div> 
+                        </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page == 'engagement' && roleId == 1">
                         <div>
