@@ -10,10 +10,12 @@ import { CommonService } from 'src/app/_services/common.service';
 export class HeaderComponent implements OnInit {
   @Input() page = '';
   roleId:any = 0;
+  user:any;
   constructor(private router: Router,private commonService:CommonService) { }
 
   ngOnInit(): void {
-    this.roleId = this.commonService.getUser()['roleId'];
+    this.user = this.commonService.getUser();
+    this.roleId = this.user['roleId'];
   }
 
   profile(){
