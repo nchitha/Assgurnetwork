@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ClientDialogComponent } from './client-dialog/client-dialog.component';
-import { forkJoin } from 'rxjs';
 import { CommonService } from '../_services/common.service';
 import { NgxSpinnerService } from "ngx-bootstrap-spinner";
 @Component({
@@ -21,11 +20,10 @@ export class ClientdetailsComponent implements OnInit {
 
   fetch(){
     this.spinner.show();
-    forkJoin(this.commonService.getUsers(),this.commonService.getAnalytics()).subscribe((data)=>{
+    this.commonService.getAnalytics().subscribe((data)=>{
       this.loaded= true;
       this.spinner.hide();
-      this.dashboard = data[1];
-      this.users = data[0];
+      this.dashboard = data;
     });
   }
   openDialog(type:any): void {

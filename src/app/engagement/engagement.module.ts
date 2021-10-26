@@ -7,12 +7,16 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { ScheduleListComponent } from './schedule-list/schedule-list.component';
 import { NewScheduleComponent } from './new-schedule/new-schedule.component';
 import { SharedModule } from '../_shared/shared.module';
+import { CustomerDelightComponent } from './customer-delight/customer-delight.component';
+import { DashboardReviewComponent } from './dashboard-review/dashboard-review.component';
 
 @NgModule({
   declarations: [
     EngagementComponent,
     ScheduleListComponent,
-    NewScheduleComponent
+    NewScheduleComponent,
+    CustomerDelightComponent,
+    DashboardReviewComponent
   ],
   imports: [
     CommonModule,

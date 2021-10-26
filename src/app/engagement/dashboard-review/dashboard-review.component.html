@@ -1,0 +1,21 @@
+<div class="review_dashboard">
+    <div class="dasboard_status">
+      <div class="mar_lft_rht">
+        <ul>
+            <li>
+                <span><a (click)="selectTab(1)" routerLink="customer-delight" routerLinkActive="active">Overview</a></span>
+            </li>
+            <li>
+                <span><a (click)="selectTab(2)" routerLink="zonalstatus" routerLinkActive="active">Dealer level </a></span>
+            </li>
+            <li>
+                <span><a (click)="selectTab(3)" routerLink="kpi-level" routerLinkActive="active">KPI level</a></span>
+            </li>
+        </ul>
+      </div>
+        <a class="downloadimage">
+            <img src="../../../../assets/images/excel.svg" alt="img-responsive" width="30"/>
+        </a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>

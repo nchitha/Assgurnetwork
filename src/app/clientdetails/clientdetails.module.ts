@@ -11,6 +11,7 @@ import { InvestorsCreateDialogComponent } from './investors-create-dialog/invest
 import { DealersCreateDialogComponent } from './dealers-create-dialog/dealers-create-dialog.component';
 import { OutletsCreateDialogComponent } from './outlets-create-dialog/outlets-create-dialog.component';
 import { EngagementCreateDialogComponent } from './engagement-create-dialog/engagement-create-dialog.component';
+import { UserCreateDialogComponent } from './user-create-dialog/user-create-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { EngagementCreateDialogComponent } from './engagement-create-dialog/enga
     InvestorsCreateDialogComponent,
     DealersCreateDialogComponent,
     OutletsCreateDialogComponent,
-    EngagementCreateDialogComponent
+    EngagementCreateDialogComponent,
+    UserCreateDialogComponent
   ],
-  entryComponents: [ClientDialogComponent,InvestorsCreateDialogComponent,DealersCreateDialogComponent,OutletsCreateDialogComponent,EngagementCreateDialogComponent],
+  entryComponents: [ClientDialogComponent,InvestorsCreateDialogComponent,DealersCreateDialogComponent,OutletsCreateDialogComponent,EngagementCreateDialogComponent,UserCreateDialogComponent],
   imports: [
     CommonModule,
     ClientdetailsRoutingModule,

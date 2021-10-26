@@ -1,106 +1,72 @@
-.clients-boxes {
+.dashboard-img {
+    background-image: url("src/assets/images/orange_bg.png");
+    height: 154px !important;
+}
+
+.dashboard-icon{
+    width: 54px;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-dashboard{
+    color: #fff;
+    font-size: 16px;
+}
+.dashboard-boxes{
     display: flex;
     align-items: stretch;
-    background: #fff;
-    padding: 21px;
 }
-
-.column{
-    background:#f2f2f2;
-}
-
-.box {
+.dashboard-box{
     color: white;
     margin: 10px;
     text-align: center;
     margin: 10px;
-    height: 200px;
-    font-size: 15px;
-    flex-grow: 4;
-    position: relative;
-    border: 1px solid #e44838;
-    color:#e44838;
-}
-
-.box-count{
-    font-size: 50px;
-}
-
-.box-name{
-    background:#e44838;
-    position:absolute;
-    bottom:0px;
-    color:#fff;
-    padding:10px;
-    text-align:center;
-    width:100%;
-    font-size:17px;
-    cursor: pointer;
-}
-
-.box-text{
-    color: #e44838;
-    text-align: center;
-    position: relative;
-    bottom: 0px;
-    margin-top: 49px;
-
-}
-
-.users-boxes{
-    display: flex;
-    align-items: stretch;
-    background: #f2f2f2;
-    padding: 21px;
-}
-.users-box{
-    background: #fff;
-    color: white;
-    margin: 10px;
-    text-align: center;
-    margin: 10px;
-    min-height: 423px;
+    height: 175px;
     font-size: 15px;
     flex-grow: 3;
-    position: relative;
-    color:#e44838;
+    position:relative;
+    cursor: pointer
 }
 
-.box-container{
-    position: relative;
-    top: 50px;
-    bottom: 50px;
+.box1{
+    background:#aa2417;
 }
 
-.client-search{
-    text-align: center;
-    display: flex;
-    padding: 27px 20px;
+.box2{
+    background:#e44838;
 }
 
-.search{
-    background: #e44838;
-    .mat-icon{
-        color:#fff;
-        position: relative;
-        top:5px;
+.box3{
+    background:#ffb600;
+}
+
+.box4{
+    background:#c3c0b8;
+}
+
+.users_box{
+    opacity: .5;
+}
+
+.users_box:hover{
+    opacity: 1;
+}
+
+.clients-img{
+    img{
+        width:100px;
+        position:absolute;
+        bottom:20px;
+        left:20px;
+    }
+    .clients-number{
+        font-size: 45px;
+    }
+
+    .clients{
+        position: absolute;
+        bottom: 50px;
+        right: 35px;
     }
 }
-
-.client-list {
-    padding: 0 20px;
-    .heading {
-
-        background-color: #E86153;
-        border: 1px solid #E86153;
-        height: 36.5px;
-        color: #fff;
-        font-size: 15px;
-        border-radius: 3px;
-    }
-    .table{
-        text-align: left;
-    }
-}
-
-

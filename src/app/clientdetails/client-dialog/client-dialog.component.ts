@@ -9,6 +9,7 @@ import { OutletsCreateDialogComponent } from '../outlets-create-dialog/outlets-c
 import { EngagementCreateDialogComponent } from '../engagement-create-dialog/engagement-create-dialog.component';
 import {Router} from '@angular/router';
 import { EngagementService } from '../../_services/engagement.service';
+import { UserCreateDialogComponent } from '../user-create-dialog/user-create-dialog.component';
 @Component({
   selector: 'app-client-dialog',
   templateUrl: './client-dialog.component.html',
@@ -101,6 +102,16 @@ export class ClientDialogComponent implements OnInit {
           width: '100%',
           panelClass: 'custom-dialog-client',
           data: { mode:"add",item: ""  }
+        });
+    
+        dialogRef.afterClosed().subscribe( (result:any) => {
+          this.fetch();
+        });
+      }else{
+        let dialogRef = this.dialog.open(UserCreateDialogComponent, {
+          width: '588px',
+          panelClass: 'custom-dialog-client',
+          data: { type:this.type  }
         });
     
         dialogRef.afterClosed().subscribe( (result:any) => {

@@ -1,0 +1,28 @@
+<div class="pop-header">
+    <span class="pop-header-text">Add {{data.type}}</span>
+    <button mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<div class="pop-body" data-simplebar>
+    <div>
+        <form  [formGroup]="userForm" >
+            <div  class="form-group user-group">
+                <label  for="user">User Name: </label>
+                <input class="form-control margin-bottom" formControlName="username" placeholder="Enter User Name" type="text">
+            </div>
+            <div  class="form-group user-group">
+                <label  for="user">Email Id: </label>
+                <input class="form-control margin-bottom" formControlName="emailid" placeholder="Enter Email Id" type="text">
+            </div>
+            <div  class="form-group user-group">
+                <label  for="user">Password: </label>
+                <input class="form-control margin-bottom" formControlName="password" placeholder="Enter Password" type="text">
+            </div>
+            <div  class="modal-footer">
+                <button [disabled]="userForm.invalid" (click)="onSubmitUser()" class="btn add_button" data-dismiss="modal" type="button">Add</button>
+                <button  class="btn close_button" data-dismiss="modal" type="button"  [mat-dialog-close]="true">Close</button>
+            </div>
+        </form> 
+    </div>
+</div>

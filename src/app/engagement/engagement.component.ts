@@ -25,7 +25,7 @@ export class EngagementComponent implements OnInit {
 
   navigateToDashboard(engg:any) {
 
-    this.router.navigate(['admin/dashboard/customer-delight'], { queryParams: { 'client_eng_id': engg.id } });
+    this.router.navigate(['app/engagement/dashboard/customer-delight'], { queryParams: { 'client_eng_id': engg.id } });
     this.engagementService.setCurEnggLocal(engg);
   }
 

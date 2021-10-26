@@ -1,0 +1,80 @@
+.review_dashboard{
+    float: left;
+    width: 100%;
+    background-color: #F2F2F2;
+    padding: 10px 15px;
+}
+.active {
+    color: #E44838 !important;
+}
+ .dasboard_status{
+   background-color: #fff;
+   display: flex;
+}
+.dasboard_status ul{
+    padding: 0px !important;
+    margin-top: 8px;
+    margin-bottom: 23px;
+}
+.mar_lft_rht {
+    float: left;
+    width: 100%;
+    text-align: center;
+    left: 309px;
+    margin: 12px 11px;
+}
+
+.dasboard_status ul li {
+    list-style: none;
+    display: inline;
+    font-weight: bold;
+    margin-right: 58px;
+}
+.dasboard_status ul li:active {
+    color:#E44838 !important;
+}
+
+.dasboard_status ul li a{ 
+    text-decoration: none;  
+    color: #000
+}
+
+.customer_score {
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    padding: 5px 0px 17px 0px;
+} 
+
+.customer_score span{
+    margin-left: 12px;
+}
+
+span.curser_pointer {
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 3px solid #E44838;
+    background: #fff;
+    color: #E44838;
+    box-shadow: none;
+    padding: 15px;
+}
+
+.downloadimage { 
+ align-self: center;
+ margin-right: 10px;
+  cursor: pointer;
+}
+
+.downloadimage figure figcaption{ 
+    text-decoration: none;  
+    color: #000
+}
+
+
+
+
+
+

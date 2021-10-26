@@ -1,0 +1,199 @@
+.d3charts {
+  float: left;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.cards {
+  padding: 10px 20px !important;
+  background: #c52a1a;
+  margin-bottom: 25px;
+}
+
+.infographic{
+  color: white;
+  font-size: 3rem;
+}
+
+.title-infographic {
+  font-size: 2rem;
+  color: white;
+  margin-left: 19px;
+}
+
+.img-infographic {
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  margin-top: 15px;
+}
+
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.border-lines {
+  height:  237px;;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.border-line {
+  border: 1px solid #666 ;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #666 ;
+  color: white;
+}
+
+.no-margin{
+  margin:0px !important;
+}
+
+.no-padding {
+  padding: 0px !important
+}
+
+.table-headers {
+  background: #666 !important;
+  color: white;
+  font-size:20px;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.bg-white{
+  background: white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.table-headings{
+  background: #666;
+  border: #666;
+  padding: 10px 0px 0px 0px;
+  color: #fff;
+  text-align: left;
+  padding: 7px 15px;
+  font-weight: bold;
+}
+
+.gauge {
+  position: relative;
+  border-radius: 50%/100% 100% 0 0;
+  background-color: var(--color, #a22);
+  overflow: hidden;
+}
+.gauge:before{
+  content: "";
+  display: block;
+  padding-top: 50%;   /* ratio of 2:1*/
+}
+.gauge .chart {
+overflow: hidden;
+}
+.gauge .mask {
+position: absolute;
+left: 20%;
+right: 20%;
+bottom: 0;
+top: 40%;
+background-color: #fff;
+border-radius: 50%/100% 100% 0 0;
+}
+
+.gauge .percentage {
+  position:  absolute;
+  top: -1px;
+  left: -1px;
+  bottom: 0;
+  right: -1px;
+  background-color: var(--background, #aaa);
+  transform:rotate(var(--rotation)); 
+  transform-origin: bottom center; 
+  transition-duration: 600;
+}
+
+.gauge .value {
+position:absolute; bottom:0%; left:0;   
+width:100%; 
+text-align: center;
+font-size: 40px;
+font-weight: 900;
+color: #666;
+
+}
+
+.gauge .min {
+position:absolute; 
+bottom:0; left:5%;   
+}
+.gauge .max {
+position:absolute; 
+bottom:0; right:5%;   
+}
+
+.padding-20{
+  padding-left: 0!important;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.dealer-distribution {
+  padding: 10px 0px 0px 0px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.area-label {
+  color: #fff;
+  background-color: #c52a1a;;
+  height: 40px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto !important;
+  font-size: 20px;
+}
+
+.area-label:hover{
+// border-color: #666 #aaa #bbb #888;
+border-color: white;
+border-width:4px 3px 3px 4px;
+}
+
+.scroll-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: inherit;
+  overflow-x: scroll !important;
+}
+
+.info{
+  font-size: 10px;
+  color : #87431D;
+  float: right;
+}

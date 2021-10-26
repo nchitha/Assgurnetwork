@@ -1,0 +1,169 @@
+<div class="d3charts">
+    <div class="container-fluid">
+        <div class="row" style="padding: 20px;">
+            <div class="col-md-4 col-lg-4">
+                <div class="cards">
+                    <div class="row title-infographic">
+                      <div class="col-md-6" style="padding-left:0px"> Sales</div>
+                      <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 img-infographic">
+                        <img class="" src="assets/images/PwC_Pictograms_Car_White_RGB.svg" height="100" width="100" />
+                      </div>
+                      <!-- <div class="col-md-6 infographic">
+                        22%</div> -->
+                      <div class="col-md-6 infographic">
+                        No data</div>
+                    </div>
+                </div>
+                <div style="overflow:auto">
+                    <div class="flex-space-between">
+                      <div class="border-line" style="width:70%;justify-content: left;padding-left: 20px;">
+                          Manpower
+                      </div>
+                      <div class="border-line" style="width:25%">
+                        0.0 %
+                      </div>
+                    </div>
+          
+                    <div class="flex-center" >No data available</div>
+                  </div>
+                  <div>
+                    <table class="table table-striped no-margin table-responsive">
+                        <thead>
+                            <tr class="table-headers">
+                                <th>
+                                <span >Top <span >10</span><span
+                                    >22</span> Sales
+                                    dealers</span>
+                                <mat-icon style="float: right; font-size: 31px; margin-right: 3px;">arrow_circle_down</mat-icon>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr >
+                                <td>No data</td>
+                              </tr>
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="cards">
+                    <div class="row title-infographic">
+                      <div class="col-md-6" style="padding-left:0px"> After Sales</div>
+                      <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 img-infographic">
+                        <img class="" src="assets/images/PwC_Pictograms_Cogs_White_RGB.png" height="100" width="100" />
+                      </div>
+                      <!-- <div class="col-md-6 infographic">
+                        22%</div> -->
+                      <div class="col-md-6 infographic">
+                        No data</div>
+                    </div>
+                </div>
+                <div style="overflow:auto">
+                    <div class="flex-space-between">
+                      <div class="border-line" style="width:70%;justify-content: left;padding-left: 20px;">
+                          Manpower
+                      </div>
+                      <div class="border-line" style="width:25%">
+                        0.0 %
+                      </div>
+                    </div>
+          
+                    <div class="flex-center" >No data available</div>
+                  </div>
+                  <div>
+                    <table class="table table-striped no-margin table-responsive">
+                        <thead>
+                            <tr class="table-headers">
+                                <th>
+                                <span >Top <span >10</span><span
+                                    >22</span>After Sales
+                                    dealers</span>
+                                <mat-icon style="float: right; font-size: 31px; margin-right: 3px;">arrow_circle_down</mat-icon>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr>
+                                <td >audi - indoor <span class="float-right">25 %</span></td>
+                              </tr>
+                              <tr >
+                                <td>No data</td>
+                              </tr>
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="row" style="margin-top: 20px;padding: 0px 0px 0px 0px;margin-right: 2px">
+                  <div class="col-md-12 col-lg-12 bg-white" style="padding:0px 0px 10px 0px;">
+                    <div class="flex-left table-headings" style="font-size:20px"><span> Audit progress </span></div>
+                    <div class="gauge" style="--color:#c52a1a; --background:lightgrey;margin-left: 20px;margin: 20px;">
+                      <div class="percentage" [style.transform]="'20'"></div>
+                      <div class="mask"></div>
+                      <span class="value">300%</span>
+                    </div>
+                    <b style="display: flex;justify-content: center;">10
+                      Outlets audited out of 13
+                    </b>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 padding-20">
+                    <div class="bg-white ">
+                      <div class="flex-left table-headings dealer-distribution">Dealer distribution Sales</div>
+        
+                      <div  class="flex-center"> No data</div>
+                      <div id="sales-pie-chart" class="flex-center"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 padding-20">
+                    <div class="bg-white">
+                      <div class="flex-left table-headings dealer-distribution">Dealer distribution After sales</div>
+                      <!-- <div class="card-title">Audi AfterSales =   {{ calculateAfterSalesScore.overAllDealerScore | number: '1.0-0'  }}</div> -->
+                      <div  id="aftersales-pie-chart" class="flex-center">
+                      </div>
+                      <div class="flex-center"> No data</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px !important;background-color:white;padding: 16px;margin: 16px;">
+          <div class="col-md-3 col-lg-3 area-label">Overview</div>
+        </div>
+        <div class="row" style="margin-top: 0px !important">
+          <div class="col-md-12 col-lg-12">
+    
+            <div id="scatter-load" class="padding-left-55 scroll-div"></div>
+            <div class="info">
+              <p><mat-icon>info</mat-icon>>Plots only those dealers who are audited for both Sales and
+                After-sales </p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

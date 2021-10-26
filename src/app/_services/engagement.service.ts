@@ -48,4 +48,23 @@ export class EngagementService {
 
   }
 
+  demomethod(clientEngagementId:any):  Promise<any> {
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/sales/${clientEngagementId}`).toPromise();
+    console.log("request passed");
+  }
+  demomethod2(clientEngagementId:any):  Promise<any> {
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/afterSales/${clientEngagementId}`).toPromise();
+    console.log("request passed");
+  }
+  demomethod3(clientEngagementId:any):  Promise<any> {
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/audit/progress/${clientEngagementId}`).toPromise();
+    console.log("request passed");
+  }
+  
+  
+  demomethod4(clientEngagementId:any,checkList_type_id:any):  Promise<any> {
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/nonComplaintKPIs/${clientEngagementId}?checkListType=${checkList_type_id}`).toPromise();
+    
+  }
+
 }

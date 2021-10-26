@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("refresh_token", data.refresh_token);
       localStorage.setItem("user", JSON.stringify(data));
       if(data.roleId == 1){
-        this.router.navigate(['/app/dashboard']);
+        this.router.navigate(['/app/clientdetails']);
       }else if(data.roleId == 2){
         this.router.navigate(['/app/auditor']);
       }

@@ -1,64 +1,87 @@
+
+
 <div class="container-fluid nopadding">
     <div class="row ">
-        <div class="col-sm-12 column">
-            <div class="box-container">
-                <div class="clients-boxes" *ngIf="loaded">
-                    <div class="box">
-                        <span class="box-count">{{dashboard.investors}}</span>
-                        <div class="box-text" >Number of Investors</div>
-                        <div class="box-name"  (click)="openDialog('Investors')">Manage Investors</div>
-                    </div>
-                    <div class="box">
-                        <span class="box-count">{{dashboard.dealers}}</span>
-                        <div class="box-text" >Number of Dealers</div>
-                        <div class="box-name"  (click)="openDialog('Dealers')">Manage Dealers
-                        </div>
-                    </div>
-                    <div class="box">
-                        <span class="box-count">{{dashboard.investors}}</span>
-                        <div class="box-text" >Number of Outlets</div>
-                        <div class="box-name"  (click)="openDialog('Outlets')">Manage Outlets</div>
-                    </div>
-                    <div class="box">
-                        <span class="box-count">{{dashboard.engagements}}</span>
-                        <div class="box-text" >Number of Engagements
-                        </div>
-                        <div class="box-name"  (click)="openDialog('Engagements')">Manage Engagements</div>
-                    </div>
+      <div class="col-sm-12">
+          <div class="home-dashboard">
+              <div class="dashboard-img d-flex align-items-center justify-content-center h-100 flex-column">
+                <div class="dashboard-icon">
+                  <img src="assets/images/dashboardicon.svg" alt="dashboard-icon" class="img-responsive" />
                 </div>
-            </div>
-            <div class="box-container">
-                <div class="users-boxes">
-                    <div class="users-box">
-            
-                    </div>
-                    <div class="users-box">
-            
-                    </div>
-                    <div class="users-box">
-                        <div class="client-search">
-                            <input class="form-control" name="search2" placeholder="Search client by name" type="text">
-                            <button class="search" type="submit"><mat-icon>search</mat-icon></button>
-                        </div>
-                        <div class="client-list">
-                            <table  class="table table-striped table-borderless table_magin_left_right">
-                                <thead>
-                                    <tr  class="heading">
-                                        <th>Users</th>
-                                        <th ></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let user of users;let i=index">
-                                        <td>{{user.firstName}}</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                  <span class="welcome-dashboard">Welcome to Dashboard !</span>
+              </div>
         </div>
+        <div class="dashboard-boxes" *ngIf="loaded">
+          <div class="dashboard-box box1" (click)="openDialog('Investors')">
+            <div class="clients-img">
+              <img src="assets/images/add_client.svg" alt="add-client" class="img-responsive" />
+              <div class="clients">
+                <span class="clients-number">{{dashboard.investors}}</span>
+                <br />
+                <span class="dashboard-client">Investors</span>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-box box2" (click)="openDialog('Dealers')">
+            <div class="clients-img">
+              <img src="assets/images/add_model.svg" alt="add-client" class="img-responsive" />
+              <div class="clients">
+                <span class="clients-number">{{dashboard.dealers}}</span>
+                <br />
+                <span class="dashboard-client">Dealers</span>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-box box3" (click)="openDialog('Engagements')">
+            <div class="clients-img">
+              <img src="assets/images/engagements.svg" alt="add-client" class="img-responsive" />
+              <div class="clients">
+                <span class="clients-number">{{dashboard.engagements}}</span>
+                <br />
+                <span class="dashboard-client">Engagements</span>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-box box4" (click)="openDialog('Outlets')">
+            <div class="clients-img">
+              <img src="assets/images/add_model.svg" alt="add-client" class="img-responsive" />
+              <div class="clients">
+                <span class="clients-number">{{dashboard.engagements}}</span>
+                <br />
+                <span class="dashboard-client">Outlets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-boxes" *ngIf="loaded">
+            <div class="dashboard-box box1 users_box" (click)="openDialog('Admin')">
+              <div class="clients-img">
+                <div class="clients">
+                  <span class="clients-number">{{dashboard.investors}}</span>
+                  <br />
+                  <span class="dashboard-client">Admin</span>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-box box2 users_box" (click)="openDialog('Auditor')">
+              <div class="clients-img">
+                <div class="clients">
+                  <span class="clients-number">{{dashboard.dealers}}</span>
+                  <br />
+                  <span class="dashboard-client">Auditor</span>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-box box3 users_box" (click)="openDialog('Client User')">
+              <div class="clients-img">
+                <div class="clients">
+                  <span class="clients-number">{{dashboard.engagements}}</span>
+                  <br />
+                  <span class="dashboard-client">Client User</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
-</div>
+  </div>
