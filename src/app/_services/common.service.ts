@@ -22,19 +22,33 @@ export class CommonService {
 
   }
 
-  getUsers() {
+  getUserAnalytics() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrl}user/all`)
+    return this.http.get<any>(`${environment.apiUrl}user/type/count`)
     .pipe(tap(data => {
+      this.spinner.hide();
       return data;
     },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  getUsersByRole(role_id:any) {
+    this.spinner.show();
+    return this.http.get<any>(`${environment.apiUrl}user/all/${role_id}`)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
     }));
 
   }
 
   getDealers() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrlAdmin}/dealerNew/getAllDealers`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}/dealer/all`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -107,7 +121,7 @@ export class CommonService {
 
   getInvestors() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrlAdmin}/investor/all/new`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}/investor/all`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -173,7 +187,7 @@ export class CommonService {
 
   getOutlets() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrlAdmin}/store/getAllStores`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}/storetype/all`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -252,7 +266,7 @@ export class CommonService {
 
   getEngagements() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrlAdmin}/engagement/all/new`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}/engagement/all`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -272,6 +286,20 @@ export class CommonService {
     formdata.append('version', engagement.version);
     this.spinner.show();
     return this.http.post(`${environment.apiUrlAdmin}/engagement`, formdata)
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+
+  }
+
+  addUser(UserData:any, type:any) {
+    UserData.roleId = type;
+    UserData.clientId = "1";
+    this.spinner.show();
+    return this.http.post(`${environment.apiUrl}/user`, UserData)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;

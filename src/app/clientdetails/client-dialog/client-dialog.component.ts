@@ -10,6 +10,7 @@ import { EngagementCreateDialogComponent } from '../engagement-create-dialog/eng
 import {Router} from '@angular/router';
 import { EngagementService } from '../../_services/engagement.service';
 import { UserCreateDialogComponent } from '../user-create-dialog/user-create-dialog.component';
+import { randomPareto } from 'd3';
 @Component({
   selector: 'app-client-dialog',
   templateUrl: './client-dialog.component.html',
@@ -39,6 +40,8 @@ export class ClientDialogComponent implements OnInit {
       this.fetchOutlets();
     if(this.type == 'Engagements')
       this.fetchEngagements();
+      if(this.type == 'Admin' || this.type == 'Auditor' || this.type == 'Client User')
+      this.fetchUsers();
   }
 
   fetchInvestors(){
@@ -64,7 +67,20 @@ export class ClientDialogComponent implements OnInit {
       this.items = data;
     });
   }
-
+  fetchUsers(){
+    let roleID = 0;
+    if(this.type == 'Admin'){
+      roleID = 1;
+    }else if(this.type == 'Auditor'){
+      roleID = 2;
+    }else if(this.type == 'Client User'){
+      roleID = 3;
+    }
+    
+    this.commonService.getUsersByRole(roleID).pipe(first()).subscribe(data  => {
+      this.items = data;
+    });
+  }
   createClient($event:any): void {
     $event.stopPropagation();
     if(this.type == 'Investors'){

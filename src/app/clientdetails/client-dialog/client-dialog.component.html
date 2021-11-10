@@ -11,20 +11,21 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th></th>
-          <th *ngIf="type != 'Engagements'"></th>
+          <th *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'"></th>
+          <th *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers' || this.type == 'Engagements'"></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of items;let i=index">
           <td><span *ngIf="(!editItems || isSelectedItemRow!=i) && type == 'Investors'">{{item.investorName}}</span>
-            <span *ngIf="type == 'Dealers'">{{item.dealer_name}}</span>
-            <span *ngIf="type == 'Outlets'">{{item.storeName}}</span>
-            <span *ngIf="type == 'Engagements'">{{item.engagement_name}}</span>
+            <span *ngIf="type == 'Dealers'">{{item.dealerName}}</span>
+            <span *ngIf="type == 'Outlets'">{{item.storeTypeName}}</span>
+            <span *ngIf="type == 'Engagements'">{{item.engagementName}}</span>
+            <span *ngIf="this.type == 'Admin' || this.type == 'Auditor' || this.type == 'Client User'">{{item.firstName}} {{item.lastName}}</span>
             <input class="txt-width"
               type="text" *ngIf="editItems && isSelectedItemRow==i && type == 'Investors'" [(ngModel)]="editedItemName" />
             </td>
-          <td  *ngIf="type != 'Engagements'">
+          <td  *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'">
             <span>
               <img src="assets/images/edit.svg"  *ngIf="!editItems || isSelectedItemRow!=i" class="align-right1"
                 (click)="editItem(i,item)" /></span>
@@ -35,7 +36,7 @@
                 class="btn sec-btn close-icon">Cancel</button>
               </span>
           </td>
-          <td *ngIf="type != 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
+          <td *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
           </td>
           <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal" (click)="redirectEngagement(item)" >remove_red_eye</mat-icon></span>
           </td>

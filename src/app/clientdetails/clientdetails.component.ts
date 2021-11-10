@@ -11,7 +11,7 @@ import { NgxSpinnerService } from "ngx-bootstrap-spinner";
 export class ClientdetailsComponent implements OnInit {
   dashboard: any;
   loaded = false;
-  users:any[] = [];
+  user:any;
   constructor(public dialog: MatDialog,public commonService:CommonService,private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -20,10 +20,13 @@ export class ClientdetailsComponent implements OnInit {
 
   fetch(){
     this.spinner.show();
-    this.commonService.getAnalytics().subscribe((data)=>{
-      this.loaded= true;
-      this.spinner.hide();
-      this.dashboard = data;
+    this.commonService.getUserAnalytics().subscribe((data1)=>{
+      this.user = data1;
+      this.commonService.getAnalytics().subscribe((data)=>{
+        this.loaded= true;
+        this.spinner.hide();
+        this.dashboard = data;
+      });
     });
   }
   openDialog(type:any): void {
