@@ -1,0 +1,36 @@
+.create-btn{
+    float: right;
+    padding:15px;
+    background: #e86153;
+    color:#fff;
+}
+
+.table-container {
+    position: relative;
+    top: 19px;
+    thead {
+        background-color: #e86153;
+        color: #fff;
+        border: 1px solid #e86153;
+        padding: 20px;
+    }
+    .delete-color-size{
+        color:#e86153;
+        font-size: 30px;
+        cursor: pointer;  
+    }
+}
+
+
+.main-btn{
+    background-color: #E86153;
+    border-color: #E86153;
+    color: #fff;
+}
+
+.sec-btn {
+    border-color: #e44838;
+    color: #e44838;
+    background-color: #fff;
+    margin-left: 24px;
+}

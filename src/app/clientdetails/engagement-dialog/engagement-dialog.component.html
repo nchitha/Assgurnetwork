@@ -1,0 +1,39 @@
+<div class="pop-header">
+    <span class="pop-header-text">Manage Enagement</span>
+    <span mat-icon-button class="close-button btn" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+    </span>
+</div>
+<div class="crt-button"><button class="btn create-btn" (click)="createClient($event)">Create New</button></div>
+<div class="pop-body"  id="scroll" data-simplebar>
+  <div class="table-container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Version</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items;let i=index">
+          <td><span >{{item.engagementName}}</span>
+          </td>
+          <td><span >{{item.engagementStartDate | date:'fullDate'}}</span>
+          </td>
+          <td><span >{{item.engagementEndDate | date:'fullDate'}}</span>
+          </td>
+          <td><span >{{item.version}}</span>
+          </td>
+          <td>
+              <span><mat-icon class="delete-color-size" data-dismiss="modal" matTooltip="Dashboard" (click)="redirectEngagement(item,'dashboard')" >remove_red_eye</mat-icon></span>&nbsp;
+              <span><mat-icon class="delete-color-size" data-dismiss="modal" matTooltip="Scheduling and Remainder" (click)="redirectEngagement(item,'schedule')" >calendar_today</mat-icon></span>&nbsp;
+              <span><mat-icon class="delete-color-size" data-dismiss="modal" matTooltip="Review Responses" (click)="redirectEngagement(item,'reviewResponse')" >pie_chart</mat-icon></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

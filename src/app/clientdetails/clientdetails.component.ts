@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ClientDialogComponent } from './client-dialog/client-dialog.component';
 import { CommonService } from '../_services/common.service';
 import { NgxSpinnerService } from "ngx-bootstrap-spinner";
+import { EngagementDialogComponent } from './engagement-dialog/engagement-dialog.component';
 @Component({
   selector: 'app-clientdetails',
   templateUrl: './clientdetails.component.html',
@@ -34,6 +35,19 @@ export class ClientdetailsComponent implements OnInit {
       width: '588px',
       panelClass: 'custom-dialog-client',
       data: { type }
+    });
+
+    dialogRef.afterClosed().subscribe( (result:any) => {
+      if(result !='engagementClose'){
+        this.fetch();
+      }
+    });
+  }
+
+  openEngagement(){
+    let dialogRef = this.dialog.open(EngagementDialogComponent, {
+      width:  '100%',
+      panelClass: 'custom-dialog-client',
     });
 
     dialogRef.afterClosed().subscribe( (result:any) => {

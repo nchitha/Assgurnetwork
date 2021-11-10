@@ -13,6 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @NgModule({
  imports: [
@@ -27,7 +29,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
   MatSelectModule,
   MatSnackBarModule,
   MatProgressBarModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatTooltipModule
   ],
   providers: [  
     MatMomentDateModule,
@@ -45,7 +48,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
   MatSelectModule,
   MatSnackBarModule,
   MatProgressBarModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatTooltipModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

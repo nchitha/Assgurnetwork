@@ -4,10 +4,13 @@ import { CustomerDelightComponent } from './customer-delight/customer-delight.co
 import { DashboardReviewComponent } from './dashboard-review/dashboard-review.component';
 import { EngagementComponent } from './engagement.component';
 import { NewScheduleComponent } from './new-schedule/new-schedule.component';
+import { ReviewerResponseComponent } from './reviewer-response/reviewer-response.component';
 import { ScheduleListComponent } from './schedule-list/schedule-list.component';
 
 const routes: Routes = [{ path: '', component: EngagementComponent },
                         { path: 'schedule-list', component: ScheduleListComponent },
+                        { path: 'reviewer-response', component: ReviewerResponseComponent },
+                        
                         { path: 'new-schedule', component: NewScheduleComponent },
                         {path: 'dashboard', component: DashboardReviewComponent, children: [
                           { path: '', redirectTo: "customer-delight", pathMatch: 'full' },

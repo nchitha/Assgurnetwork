@@ -9,6 +9,7 @@ import { NewScheduleComponent } from './new-schedule/new-schedule.component';
 import { SharedModule } from '../_shared/shared.module';
 import { CustomerDelightComponent } from './customer-delight/customer-delight.component';
 import { DashboardReviewComponent } from './dashboard-review/dashboard-review.component';
+import { ReviewerResponseComponent } from './reviewer-response/reviewer-response.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardReviewComponent } from './dashboard-review/dashboard-review.co
     ScheduleListComponent,
     NewScheduleComponent,
     CustomerDelightComponent,
-    DashboardReviewComponent
+    DashboardReviewComponent,
+    ReviewerResponseComponent
   ],
   imports: [
     CommonModule,
