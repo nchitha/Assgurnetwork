@@ -37,6 +37,10 @@ export class LoginComponent implements OnInit {
       }else if(data.roleId == 2){
         this.router.navigate(['/app/auditor']);
       }
+      else if(data.roleId == 3){
+        this.router.navigate(['/app/engagement']);
+      }
+
 
     }, (err:any) => {
       this._snackBar.open(err.error.message, 'Close',{

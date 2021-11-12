@@ -28,9 +28,10 @@
     color: #fff;
 }
 
-.sec-btn {
-    border-color: #e44838;
+.close-icon {
     color: #e44838;
-    background-color: #fff;
-    margin-left: 24px;
+    margin-left: 6px;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
 }

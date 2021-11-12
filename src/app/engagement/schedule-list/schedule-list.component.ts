@@ -17,7 +17,7 @@ export class ScheduleListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getTasks("new");
+    this.getTasks("NEW");
   }
 
   getTasks(status: string) {
@@ -26,7 +26,6 @@ export class ScheduleListComponent implements OnInit {
       console.log("Tasks: ", data);
       this.tasks = data.map((el:any) => {
         el['dateOfResponse'] = moment(el['dueDate']).format("YYYY-MM-DD");
-        el.state = el['stateName'];
         return el;
       });
     });

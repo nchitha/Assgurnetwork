@@ -39,7 +39,7 @@ export class ClientdetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe( (result:any) => {
       if(result !='engagementClose'){
-        this.fetch();
+       // this.fetch();
       }
     });
   }
@@ -52,7 +52,7 @@ export class ClientdetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe( (result:any) => {
       if(result !='engagementClose'){
-        this.fetch();
+       // this.fetch();
       }
     });
   }

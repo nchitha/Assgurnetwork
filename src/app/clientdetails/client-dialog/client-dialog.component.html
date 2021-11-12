@@ -32,8 +32,9 @@
                 <span *ngIf="editItems && isSelectedItemRow==i">
                 <button
                 (click)="editItems=false;updateItem(item,editedItemName)" class="btn main-btn">Update</button>
-                <button (click)="editItems=false"
-                class="btn sec-btn close-icon">Cancel</button>
+                <!-- <button (click)="editItems=false"
+                class="btn sec-btn close-icon">Cancel</button> -->
+                <mat-icon class="close-icon" (click)="editItems=false">close</mat-icon>
               </span>
           </td>
           <td *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>

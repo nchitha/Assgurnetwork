@@ -1,7 +1,7 @@
 <div class="container-fluid engagement-box">
     <div class="row">
-        <div *ngFor="let engagement of engagements;let i=index" class="col-sm-3">
-            <div class="eng-card"  (click)="navigateToDashboard(engagement)">
+        <div *ngFor="let engagement of engagements;let i=index" class="col-sm-4">
+            <div class="eng-card">
                 <div class="row">
                     <div class="col-md-4 eng_id">
                       ID: {{engagement.id}}
@@ -11,7 +11,7 @@
                         <small><mat-icon>calendar_today</mat-icon></small>
                       </div>
                       <div class="col-md-10 strt-date">
-                        {{engagement.engagementStartDate | date}}
+                        {{engagement.engagementStartDate | date:'dd/MM/YYYY'}}
                       </div>
                     </div>
                   </div>
@@ -23,7 +23,9 @@
                       </p>
                     </div>
                     <div class="col-md-3">
-          
+                      <span><mat-icon class="icon_redirect" matTooltip="Dashboard" (click)="redirectEngagement(engagement,'dashboard')" >remove_red_eye</mat-icon></span>&nbsp;
+                      <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Scheduling and Remainder" (click)="redirectEngagement(engagement,'schedule')" >calendar_today</mat-icon></span>&nbsp;&nbsp;
+                      <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Review Responses" (click)="redirectEngagement(engagement,'reviewResponse')" >pie_chart</mat-icon></span>
                     </div>
                   </div>
             </div>

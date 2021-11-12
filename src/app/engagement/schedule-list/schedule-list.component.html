@@ -1,10 +1,10 @@
 <div class="schedule-list">
     <div class="heading">
-      <span [ngClass]="{'bor-btm': !headActive}" (click)="headActive = false; getTasks('new')">Scheduled</span>
-      <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('saved')">Completed</span>
+      <span [ngClass]="{'bor-btm': !headActive}" (click)="headActive = false; getTasks('NEW')">Scheduled</span>
+      <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('INPROGRESS')">INPROGRESS</span>
     </div>
     <div class="create">
-      <button class="btn btn-default btn-main" (click)="onCreate()">CREATE</button>
+      <button class="btn btn-default btn-main" (click)="onCreate()">CREATE</button> 
     </div>
   
     <div class="table-container">
@@ -21,10 +21,10 @@
         <tbody>
           <tr *ngFor="let task of tasks">
             <td>{{task.storeName}}</td>
-            <td>{{task.cityName}}</td>
+            <td>{{task.city}}</td>
             <td>{{task.state}}</td>
-            <td>{{task.mystry_shopper}}</td>
-            <td>{{task.dateOfResponse}}</td>
+            <td>{{task.auditor}}</td>
+            <td>{{task.dateOfResponse  | date:'dd/MM/YYYY'}}</td>
           </tr>
         </tbody>
       </table>

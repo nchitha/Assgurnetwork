@@ -15,7 +15,7 @@ export class EngagementService {
   fetchSchedule(status:any){
     this.spinner.show();
     const enggId = this.getCurEnggLocal()['id'];
-    return this.http.get<any>(`${environment.apiUrlAdmin}audit/shedule/${enggId}`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}audit/shedule/${enggId}?status=${status}`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
