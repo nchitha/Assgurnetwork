@@ -1,13 +1,13 @@
 .questionnaire-container{
     padding-bottom: 20px;
     
-    .text-align-center{
-        text-align:center;
+    .text-align-right{
+        float:right;
     }
     
     .progress-bar-styling{
         width:100%;
-        margin-top:20px;
+        margin-top:10px;
     }
     
     .menu-strip {
@@ -183,3 +183,33 @@
         margin-right: 30px;
     }
 }
+
+.question_title_div{
+    margin-top:20px;
+}
+
+
+
+.modal-header.info.manage_users.admin_popup_model {
+    height: 76px;
+    width: 95%;
+    margin: auto;
+    /* padding-left: 33px; */
+    border-bottom: 1.5px solid #E44838 !important;
+    h3.modal-title {
+      position: relative;
+      bottom: 12px;
+  }
+  padding-top: 32px;
+  }
+  
+  .modal-body.info_model_body {
+    min-height: 100px !important;
+    padding-top: 35px;  
+    padding-left: 32px;
+    white-space: pre-wrap;
+  }
+
+  .modal-title{
+      
+  }

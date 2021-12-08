@@ -67,4 +67,36 @@ export class EngagementService {
     
   }
 
+  getAllDealers(engID:string,checklistType:any){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/dealer/all/${engID}?checkListId=${checklistType}`)
+  }
+
+  getDealerDetails(dealerId:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/dealer/details/${dealerId}`);
+  }
+
+  getDealerScores(engId:string,checklistType:string,dealerId:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/dealer/level/score/${engId}?checkListType=${checklistType}&dealerId=${dealerId}`)
+  }
+
+  getDealerCategoryLevelScore(engId:string,checklistType:string,category:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/category/level/score/${engId}?checkListType=${checklistType}&category='${category}'`);
+  }
+
+  getDealerNationalLevelScore(engId:string,checklistType:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/national/level/score/${engId}?checkListType=${checklistType}`);
+  }
+
+  getDealerAreaDetails(engId:string,checklistType:string,dealerId:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/dealer/level/audit/area/dynamic?engagementId=${engId}&checkListId=${checklistType}&dealerId=${dealerId}`)
+  }
+
+  getDealerLevelKPIDropDownData(engId:string,checklistType:string,dealerId:string){
+    return this.http.get(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/dealer/level/dropdown/${engId}/${dealerId}?checkListId=${checklistType}`)
+  }
+
+  getDealerLevelKPIList(payload:any):Promise<any>{
+    return this.http.post(`https://cpat-test-nodejs.azurewebsites.net/api/v1/engagement/dealer/kpi/level/search`,payload).toPromise()
+  }
+
 }

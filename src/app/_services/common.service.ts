@@ -60,7 +60,7 @@ export class CommonService {
 
   deleteDealers(id: any){
     this.spinner.show();
-    return this.http.delete(`${environment.apiUrlAdmin}/dealerNew/deleteDealer/${id}`)
+    return this.http.delete(`${environment.apiUrlAdmin}/dealer/${id}`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -71,13 +71,13 @@ export class CommonService {
 
   addDealer(dealers: any) {
     let params = {
-      dealer_name : dealers.dealer,
-      dealer_category:dealers.dealerCategory,
-      investor_id:dealers.engagement,
-      dealer_code:dealers.dealerCode
+      dealerName : dealers.dealer,
+      dealerCategory:dealers.dealerCategory,
+      investorId:dealers.investors,
+      dealerCode:dealers.dealerCode
     }
     this.spinner.show();
-    return this.http.post(`${environment.apiUrlAdmin}/dealerNew/addDealer`, params)
+    return this.http.post(`${environment.apiUrlAdmin}dealer`, params)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -89,13 +89,14 @@ export class CommonService {
 
   updateDealers(dealers: any,id: any,investorsName:any) {
     let params = {
-      dealer_name : dealers.dealer,
-      dealer_category:dealers.dealerCategory,
-      investor_name:investorsName,
-      dealer_code:dealers.dealerCode
+      dealerName : dealers.dealer,
+      dealerCategory:dealers.dealerCategory,
+      //investorName:investorsName,
+      dealerCode:dealers.dealerCode,
+      investorId:dealers.investors
     }
     this.spinner.show();
-    return this.http.put(`${environment.apiUrlAdmin}dealerNew/updateDealer/${id}`, params)
+    return this.http.put(`${environment.apiUrlAdmin}dealer/${id}`, params)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -109,7 +110,7 @@ export class CommonService {
     const formdata = new FormData();
     formdata.append('dealers', event);
     this.spinner.show();
-    return this.http.post(`${environment.apiUrlAdmin}/dealerNew/bulkUpload`, formdata)
+    return this.http.post(`${environment.apiUrlAdmin}/dealers/bulk`, formdata)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -187,7 +188,7 @@ export class CommonService {
 
   getOutlets() {
     this.spinner.show();
-    return this.http.get<any>(`${environment.apiUrlAdmin}/storetype/all`)
+    return this.http.get<any>(`${environment.apiUrlAdmin}/store/all`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -199,16 +200,16 @@ export class CommonService {
 
   addOutlets(outlet: any) {
     let params = {
-      dealerName : outlet.dealers,
+      dealerId : outlet.dealers,
       storeName:outlet.outlet,
-      storeType:outlet.outletType,
+      storeTypeId:outlet.outletType,
       address:outlet.address,
       city:outlet.city,
       state:outlet.state,
       zone:outlet.zone
     }
     this.spinner.show();
-    return this.http.post(`${environment.apiUrlAdmin}/store/addStore`, params)
+    return this.http.post(`${environment.apiUrlAdmin}store`, params)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -229,7 +230,7 @@ export class CommonService {
       zone:outlet.zone
     }
     this.spinner.show();
-    return this.http.put(`${environment.apiUrlAdmin}store/updateStore/${storeId}`, params)
+    return this.http.put(`${environment.apiUrlAdmin}store/${storeId}`, params)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;
@@ -241,7 +242,7 @@ export class CommonService {
 
   deleteOutlets(id: any){
     this.spinner.show();
-    return this.http.delete(`${environment.apiUrlAdmin}/store/deleteStore/${id}`)
+    return this.http.delete(`${environment.apiUrlAdmin}/store/${id}`)
     .pipe(tap(data => {
       this.spinner.hide();
       return data;

@@ -169,3 +169,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     position: relative;
     top:4px;
   }
+
+  .multiselect-dropdown .dropdown-btn .selected-item {
+    border: 1px solid #d04a02 !important;
+    margin-right: 4px;
+    background: #d04a02 !important;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 2px;
+    float: left;
+    opacity: .9;
+    //max-width: max-content !important;
+  }

@@ -25,10 +25,10 @@ export class DealersCreateDialogComponent implements OnInit {
     }else{
       this.bulkUpload = false;
       this.dealerForm = this.fb.group({
-        dealer: [this.data.item.dealer_name, [Validators.required]],
-        investors: [6, Validators.required],
-        dealerCategory: [this.data.item.dealer_category, Validators.required],
-        dealerCode: [this.data.item.dealer_code, Validators.required],
+        dealer: [this.data.item.dealerName, [Validators.required]],
+        investors: [this.data.item.investorId, Validators.required],
+        dealerCategory: [this.data.item.dealerCategory, Validators.required],
+        dealerCode: [this.data.item.dealerCode, Validators.required],
       });
     }
     
@@ -65,7 +65,7 @@ export class DealersCreateDialogComponent implements OnInit {
           return;
         }
       })
-      this.commonService.updateDealers(this.dealerForm.value,this.data.item.dealer_id,investorsName).subscribe((data:any) => {
+      this.commonService.updateDealers(this.dealerForm.value,this.data.item.id,investorsName).subscribe((data:any) => {
         
         this._snackBar.open(data.message, 'Close',{
           duration: 3000,

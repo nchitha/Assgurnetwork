@@ -10,11 +10,13 @@ import { EngagementService } from 'src/app/_services/engagement.service';
 })
 export class ReviewerResponseComponent implements OnInit {
   tableHeaders = ['Outlet', "City", "State", "Auditor", "Date of Response", "View Response", ""];
-  tasks: Task[] = [];
+  tasks = [];
   isPreviewDisplayed: boolean = false
   auditTaskId: number = 0;
   searchTerm: any;
   headActive: boolean = false;
+  loaded:boolean = false;
+  eng_title = "";
   constructor(private engagementService: EngagementService, private route: ActivatedRoute, private router: Router) { }
 
   
@@ -23,6 +25,7 @@ export class ReviewerResponseComponent implements OnInit {
   ngOnInit() {
     this.getTasks('PENDING');
     this.route.queryParams.subscribe(params => {
+      this.eng_title = params.client_eng_name;
       this.auditTaskId = params['audit_id'];
     });
   }
@@ -31,6 +34,7 @@ export class ReviewerResponseComponent implements OnInit {
     this.engagementService.fetchSchedule(status).subscribe(data => {
       console.log("Tasks: ", data);
       this.tasks = data;
+      this.loaded = true;
       // .map(el => {
       //   let task = <Task>{};
       //   task.id = el['auditId'];
@@ -44,21 +48,21 @@ export class ReviewerResponseComponent implements OnInit {
       // })
     });
   }
-  // onClickViewResponse(task: Task) {
+  onClickViewResponse(task: Task) {
   //   console.log("task ", task);
   //   let extras: NavigationExtras = {
   //     queryParams: { 'audit_id': task.id, 'storeId': task.storeId }
   //   };
   //   this.router.navigate(['/admin/questionnarie'], extras);
-  // }
+ }
 
-  // onClickConfirmPublish() {
+   onClickConfirmPublish() {
   //   let clientengagementId: Number = this.engagementService.getCurEnggLocal()['client_engagement_id'];
   //   this._questionnarie.publishAuditTask(this.auditTaskId, clientengagementId).subscribe(res => {
   //     if (res) {
   //       this.closeBtn.nativeElement.click();
   //     }
   //   })
-  // }
+  }
 
 }

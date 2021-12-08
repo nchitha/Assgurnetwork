@@ -2,16 +2,20 @@
     margin-top:10px;
 }
 
+.eng_name_div{
+    height: 63px;
+    line-height: 20px;
+}
+
 .eng-card{
-    background-image: linear-gradient(to right, #E44838 , brown);
-    height: 151px;
+    background: #c52a1a;
+    height: 170px;
     font-size: 15px;
     border-radius: 5px;
-    width: 83%;
     transition: transform .2s;
     color: white;
     white-space: pre-wrap;
-    padding-left: 20px;
+    padding-left: 25px;
     margin: auto;
     margin-bottom: 30px;
     .eng_id{
@@ -19,29 +23,57 @@
     }
     .strt-date {
         line-height: 27px;
-        padding-left: 6px;
+        font-size: 17px;
     }
     .eng-row {
         position: relative;
-        top: -17px;
     }
     .eng_name{
         margin-top:17px;
-        font-size: 20px;
+        font-size: 23px;
     }
     .calendar_date{
-        margin-top: 18px;
+        margin-top: 16px;
+        margin-top: 16px;
+        width: 130px;
+    }   
+
+    .eng_version{
+        font-size: 17px;
     }
 
     .mat-icon{
         margin-left: 11px;
     }
+
+    .icons_div{
+        width: 130px;
+        margin-top: 37px;
+        margin-left: auto;
+        margin-right: 24px;
+    }
 }
 
-.eng-card:hover {
-    box-shadow: 0 1px 2px 1px rgba(142,145,147,.8);
-  }
+// .eng-card:hover {
+//     box-shadow: 0 1px 2px 1px rgba(142,145,147,.8);
+//   }
 
   .icon_redirect{
       cursor: pointer;
   }
+
+.crt-button{
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    padding-right: 15px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    margin-right: -12px;
+}
+.create-btn{
+    float: right;
+    padding:15px;
+    background: #c52a1a;
+    color:#fff;
+}

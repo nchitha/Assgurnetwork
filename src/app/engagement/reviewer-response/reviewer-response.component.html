@@ -1,4 +1,6 @@
-<div class="heads">
+
+  <div class="eng_title" style="font-size: 20px;font-weight: bolder;margin: 10px;">{{eng_title}}</div>  
+  <div class="heads" *ngIf="loaded">
     <span [ngClass]="{'bor-btm': !headActive}" (click)="headActive = false; getTasks('PENDING')">Pending</span>
     <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('PUBLISH')">Published</span>
   </div>

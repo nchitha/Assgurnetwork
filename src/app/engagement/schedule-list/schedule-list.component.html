@@ -1,7 +1,9 @@
+
 <div class="schedule-list">
+  <div class="eng_title" style="font-size: 20px;font-weight: bolder;">{{eng_title}}</div>
     <div class="heading">
       <span [ngClass]="{'bor-btm': !headActive}" (click)="headActive = false; getTasks('NEW')">Scheduled</span>
-      <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('INPROGRESS')">INPROGRESS</span>
+      <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('INPROGRESS')">In progress</span>
     </div>
     <div class="create">
       <button class="btn btn-default btn-main" (click)="onCreate()">CREATE</button> 

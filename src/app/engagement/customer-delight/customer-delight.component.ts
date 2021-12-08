@@ -1,4 +1,6 @@
+//@ts-nocheck
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import * as d3 from "d3";
 import { EngagementService } from 'src/app/_services/engagement.service';
 
@@ -109,9 +111,17 @@ export class CustomerDelightComponent implements OnInit {
   svg: any;
   colors: any;
   radius = Math.min(this.width, this.height) / 2 - this.margin.left;
-  constructor(private engagementService:EngagementService) { }
+  flag = true;
+  checked = false;
+  isLoading = false;
+  isLast =false;
+  eng_title = "";
+  constructor(private engagementService:EngagementService,private route: ActivatedRoute) { }
 
   async ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.eng_title = params.client_eng_name;
+    });
     this.createSaleSvg();
     this.createSaleColors(this.saleData);
     this.drawSaleChart();
@@ -458,8 +468,8 @@ export class CustomerDelightComponent implements OnInit {
       })
       .on("mousemove",  () => {
         return tooltip
-          // .style("top", d3.event.pageY + 20 + "px")
-          // .style("left", d3.event.pageX + 20 + "px")
+          .style("top", d3.event.pageY + 20 + "px")
+          .style("left", d3.event.pageX + 20 + "px")
           .style("display", "block");
       })
       .on("mouseout", function () {
@@ -495,8 +505,8 @@ export class CustomerDelightComponent implements OnInit {
       })
       .on("mousemove", function () {
         return tooltip
-          // .style("top", d3.event.pageY + 20 + "px")
-          // .style("left", d3.event.pageX + 20 + "px")
+          .style("top", d3.event.pageY + 20 + "px")
+          .style("left", d3.event.pageX + 20 + "px")
           .style("display", "block");
       })
       .on("mouseout", function () {
@@ -718,6 +728,17 @@ export class CustomerDelightComponent implements OnInit {
         var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
         return midangle < Math.PI ? 'start' : 'end';
       });
+  }
+
+  toggleKpiSection(element: HTMLElement) {
+    this.flag = !this.flag;
+    if (this.flag) {
+      window.scrollTo();
+    }
+  }
+
+  changed(){
+    
   }
 
 

@@ -1,33 +1,39 @@
 <div class="container-fluid engagement-box">
+  <div class="crt-button"><button class="btn create-btn" (click)="createClient($event)">Create New</button></div>
     <div class="row">
         <div *ngFor="let engagement of engagements;let i=index" class="col-sm-4">
             <div class="eng-card">
                 <div class="row">
-                    <div class="col-md-4 eng_id">
-                      ID: {{engagement.id}}
-                    </div>
-                    <div class="col-md-8 calendar_date">
-                      <div class="col-md-2">
-                        <small><mat-icon>calendar_today</mat-icon></small>
-                      </div>
-                      <div class="col-md-10 strt-date">
-                        {{engagement.engagementStartDate | date:'dd/MM/YYYY'}}
-                      </div>
-                    </div>
+                  <div class="col-md-12 eng_name_div">
+                    <div class="eng_name">{{engagement.engagementName}}</div>
                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="eng_version">Version: {{engagement.version}}</div>
+                  </div>
+                </div>
           
-                  <div class="row eng-row">
-                    <div class="col-md-9">
-                      <p class="eng_name">
-                        {{engagement.engagementName}}
-                      </p>
-                    </div>
-                    <div class="col-md-3">
-                      <span><mat-icon class="icon_redirect" matTooltip="Dashboard" (click)="redirectEngagement(engagement,'dashboard')" >remove_red_eye</mat-icon></span>&nbsp;
-                      <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Scheduling and Remainder" (click)="redirectEngagement(engagement,'schedule')" >calendar_today</mat-icon></span>&nbsp;&nbsp;
-                      <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Review Responses" (click)="redirectEngagement(engagement,'reviewResponse')" >pie_chart</mat-icon></span>
-                    </div>
+                <div class="row eng-row">
+                  
+                  <div class="calendar_date">
+                      <div>
+                        <span class="date_small">Start Date</span>
+                      </div>
+                      <div class="strt-date">{{engagement.engagementStartDate | date:'dd/MM/YYYY'}}</div>
                   </div>
+                  <div class="calendar_date">
+                    <div>
+                      <span class="date_small">End Date</span>
+                    </div>
+                    <div class="strt-date">{{engagement.engagementEndDate | date:'dd/MM/YYYY'}}</div>
+                  </div>
+                  <div class="icons_div">
+                    <span><mat-icon class="icon_redirect" matTooltip="Dashboard" (click)="redirectEngagement(engagement,'dashboard')" >insert_chart</mat-icon></span>
+                    <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Scheduling and Remainder" (click)="redirectEngagement(engagement,'schedule')" >timer</mat-icon></span>
+                    <span><mat-icon class="icon_redirect"  *ngIf="roleId =='1'" matTooltip="Review Responses" (click)="redirectEngagement(engagement,'reviewResponse')" >pie_chart</mat-icon></span>
+                  </div>
+                </div>
             </div>
         </div>
     </div>

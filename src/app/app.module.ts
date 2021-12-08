@@ -15,6 +15,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './_shared/shared.module';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 import { HttpRequestInterceptor } from './HttpRequestInterceptor';
 
@@ -34,7 +36,8 @@ import { HttpRequestInterceptor } from './HttpRequestInterceptor';
     DashboardModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    SharedModule
+    SharedModule,
+    NgMultiSelectDropDownModule
   ],
   providers: [
     AuthService,

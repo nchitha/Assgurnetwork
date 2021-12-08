@@ -26,4 +26,16 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login', {  }]);
   }
+
+  redirection(){
+    // routerLink="/app/clientdetails"
+    if(this.roleId == 1){
+      this.router.navigate(['/app/clientdetails']);
+    }
+    else if(this.roleId == 2){
+      this.router.navigate(['/app/auditor']);
+    }else if(this.roleId == 3){
+      this.router.navigate(['/app/engagement']);
+    }
+  }
 }

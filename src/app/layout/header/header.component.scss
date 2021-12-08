@@ -17,9 +17,9 @@ header{
             border-radius: 9px;
         }
     }
-    .navbar-collapse{
-        justify-content: center;
-    }
+    // .navbar-collapse{
+    //     //justify-content: center;
+    // }
 }
 
 .dashboard_link{
@@ -46,15 +46,21 @@ header{
 .users{
     float:right;
     top: 6px;
+    margin-top: 6px;
     .mat-icon{
         color:#fff;
         font-size: 38px;
     }
+}
 
+::ng-deep{
     .username{
-        color:#fff;
-        margin-left:5px;
-        font-size:14px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .email{
+        font-size: 14px;
     }
 }
 
@@ -66,4 +72,11 @@ header{
     display: inline-block;
     top: 8px;
     position: relative;
+}
+
+.mat-icon-user{
+    float: left;
+    font-size: 44px;
+    margin-left: 14px;
+    color: #c52a1a;
 }

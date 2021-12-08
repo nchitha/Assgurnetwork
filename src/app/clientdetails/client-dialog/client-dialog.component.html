@@ -19,7 +19,7 @@
         <tr *ngFor="let item of items;let i=index">
           <td><span *ngIf="(!editItems || isSelectedItemRow!=i) && type == 'Investors'">{{item.investorName}}</span>
             <span *ngIf="type == 'Dealers'">{{item.dealerName}}</span>
-            <span *ngIf="type == 'Outlets'">{{item.storeTypeName}}</span>
+            <span *ngIf="type == 'Outlets'">{{item.storeName}}</span>
             <span *ngIf="type == 'Engagements'">{{item.engagementName}}</span>
             <span *ngIf="this.type == 'Admin' || this.type == 'Auditor' || this.type == 'Client User'">{{item.firstName}} {{item.lastName}}</span>
             <input class="txt-width"
@@ -37,9 +37,9 @@
                 <mat-icon class="close-icon" (click)="editItems=false">close</mat-icon>
               </span>
           </td>
-          <td *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'"><span><mat-icon class="delete-color-size" data-dismiss="modal"  (click)="deleteItem(item)">delete</mat-icon></span>
+          <td *ngIf="type == 'Investors' || type == 'Outlets' || type == 'Dealers'"><span><mat-icon class="delete-color-size" (click)="deleteItem(item)">delete</mat-icon></span>
           </td>
-          <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" data-dismiss="modal" (click)="redirectEngagement(item)" >remove_red_eye</mat-icon></span>
+          <td *ngIf="type == 'Engagements'"><span><mat-icon class="delete-color-size" (click)="redirectEngagement(item)" >remove_red_eye</mat-icon></span>
           </td>
         </tr>
       </tbody>

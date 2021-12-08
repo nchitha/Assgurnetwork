@@ -32,8 +32,8 @@
                 <input class="form-control margin-bottom" formControlName="dealerCode" placeholder="Enter dealer code" type="text">
             </div>
             <div  class="modal-footer">
-                <button [disabled]="dealerForm.invalid" (click)="onSubmitDealer()" class="btn add_button" data-dismiss="modal" type="button">{{data.mode =="add" ?"Add":"Edit"}}</button>
-                <button  class="btn close_button" data-dismiss="modal" type="button"  [mat-dialog-close]="true">Close</button>
+                <button [disabled]="dealerForm.invalid" (click)="onSubmitDealer()" class="btn add_button" type="button">{{data.mode =="add" ?"Add":"Edit"}}</button>
+                <button  class="btn close_button" type="button"  [mat-dialog-close]="true">Close</button>
             </div>
         </form>
         <ng-container *ngIf="bulkUpload">

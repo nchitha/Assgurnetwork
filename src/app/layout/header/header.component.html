@@ -1,6 +1,6 @@
 <header class="container-fluid">
         <div class="nopadding main-content row">
-                <div class="logo col-sm-2" routerLink="/app/clientdetails">
+                <div class="logo col-sm-2" (click)="redirection()">
                         <img src="assets/images/CPAT2.png">
                 </div>
                 <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="roleId == 2">
@@ -11,44 +11,24 @@
                                                         <mat-icon>home</mat-icon>
                                                         Home
                                                 </a>
-                                                <a class="nav-item nav-link" routerLink="/app/auditor/review-outlets" [routerLinkActive]="['active']">
+                                                <!-- <a class="nav-item nav-link" routerLink="/app/auditor/review-outlets" [routerLinkActive]="['active']">
                                                         <mat-icon>bar_chart</mat-icon>
                                                         Dealer Review
-                                                </a>
+                                                </a> -->
                                         </div>
                                 </div> 
                         </div>
                 </nav>
-                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page == 'engagement' && roleId == 1">
-                        <!-- <div>
-                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                        <div class="navbar-nav">
-                                                <a class="nav-item nav-link" routerLink="/app/engagement" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-                                                        <mat-icon>bar_chart</mat-icon>
-                                                        Dashboard
-                                                </a>
-                                                <a class="nav-item nav-link" routerLink="/app/engagement/schedule-list" [routerLinkActive]="['active']">
-                                                        <mat-icon>calendar_today</mat-icon>
-                                                        Scheduling and Reminder
-                                                </a>
-                                                <a class="nav-item nav-link" >
-                                                        <mat-icon>pie_chart</mat-icon>
-                                                        Review Responses
-                                                </a>
-                                        </div>
-                                </div> 
-                        </div> -->
-                </nav>
-                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="page != 'engagement' && roleId == 1">
+                <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="roleId == 1">
                         
-                        <!-- <div>
+                        <div>
                                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                         <div class="navbar-nav">
-                                                <a class="nav-item nav-link" routerLink="/app/dashboard" [routerLinkActive]="['active']">
+                                                <a class="nav-item nav-link" routerLink="/app/clientdetails" [routerLinkActive]="['active']">
                                                         <mat-icon>home</mat-icon>
                                                         Home
                                                 </a>
-                                                <a class="nav-item nav-link" routerLink="/app/clientdetails" [routerLinkActive]="['active']">
+                                                <!-- <a class="nav-item nav-link" routerLink="/app/clientdetails" [routerLinkActive]="['active']">
                                                         <mat-icon>add_to_queue</mat-icon>
                                                         Clients
                                                 </a>
@@ -59,27 +39,39 @@
                                                 <a class="nav-item nav-link disabled" href="#">
                                                         <mat-icon>checkroom</mat-icon>
                                                         Diagnostics
-                                                </a>
+                                                </a> -->
                                         </div>
                                 </div> 
-                        </div> -->
+                        </div>
                 </nav>
                 <nav class="navbar navbar-expand-lg row col-sm-7 layout" *ngIf="roleId == 3">
+                        <div>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-item nav-link" routerLink="/app/engagement" [routerLinkActive]="['active']">
+                                                        <mat-icon>home</mat-icon>
+                                                        Home
+                                                </a>
+                                        </div>
+                                </div>
+                        </div>
                 </nav>
                 <div class= "col-sm-3">
                         <div class="users">
-                                <div class="user_image"> </div>
-                                <span class="username">{{user.firstName}} {{user.lastName}}</span>
+                                <!-- <div class="user_image"> </div>
+                                <span class="username">{{user.firstName}} {{user.lastName}}</span> -->
                                 <button mat-icon-button [matMenuTriggerFor]="menu" class="btn"> 
-                                        <mat-icon>arrow_drop_down</mat-icon>
+                                        <mat-icon>supervised_user_circle</mat-icon>
                                 </button>
                                 <mat-menu #menu="matMenu"> 
-                                        <button mat-menu-item (click)="profile()">
-                                                <mat-icon>supervised_user_circle</mat-icon>
-                                                <span>Profile</span>
-                                        </button>
-                                        <button mat-menu-item (click)="logout()">
-                                                <mat-icon>logout</mat-icon>
+                                        <div style="min-width: 169px; padding: 1px 16px;">
+                                                <span class="username">{{user.firstName}} {{user.lastName}}</span><br>
+                                                <span class="email">{{user.email}}</span><br>
+                                                <!-- <span class="email"><b>Role:</b> {{user.role}}</span> -->
+                                        </div>
+                                        <mat-icon class="mat-icon-user" style="float:left;">supervised_user_circle</mat-icon>
+                                        <button mat-menu-item style="width: 116px; float: right; color:#c52a1a;" (click)="logout()">
+                                                <mat-icon style="color:#c52a1a;">logout</mat-icon>
                                                 <span>Logout</span>
                                         </button>
                                 </mat-menu>

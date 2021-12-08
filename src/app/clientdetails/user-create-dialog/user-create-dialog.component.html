@@ -26,8 +26,8 @@
                 <input class="form-control margin-bottom" formControlName="password" placeholder="Enter Password" type="text">
             </div>
             <div  class="modal-footer">
-                <button [disabled]="userForm.invalid" (click)="onSubmitUser()" class="btn add_button" data-dismiss="modal" type="button">Add</button>
-                <button  class="btn close_button" data-dismiss="modal" type="button"  [mat-dialog-close]="true">Close</button>
+                <button [disabled]="userForm.invalid" (click)="onSubmitUser()" class="btn add_button" type="button">Add</button>
+                <button  class="btn close_button" type="button"  [mat-dialog-close]="true">Close</button>
             </div>
         </form> 
     </div>

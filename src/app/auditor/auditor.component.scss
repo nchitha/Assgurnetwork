@@ -3,7 +3,7 @@
       border-radius: 5px;
       cursor: pointer;
       height: 100%;
-      background-image: linear-gradient(to right, #E44838 , brown);
+      background: #c52a1a;
       
       color: #fff;
   
@@ -11,7 +11,7 @@
       padding: 1rem;
       padding-top: 0.5rem;
       box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, .15);
-      min-height: 165px;
+      min-height: 130px;
     }
   
     .card-body:hover {
@@ -28,8 +28,9 @@
     label.text-muted-rowitem {
       color: #fff !important;
       float: left;
+      margin-top: 32px;
       margin-bottom: 0rem !important;
-      font-size: 150%;
+      font-size: 17px;
     }
   
     label.text-muted-rowitem:hover {
@@ -41,8 +42,8 @@
     }
   
     .row.inforow {
-      margin-top: 30px;
-      padding-left: 15px;
+      margin-top: 2px;
+      padding-left: 4px;
     }
   
     .row.title-box {
@@ -83,11 +84,13 @@
   
   
   small.due-date {
-    font-size: 67%;
+    font-size: 15px;
   }
   
   h4.card-subtitle{
     color:white;
+    line-height: 24px;
+    font-size: 23px;
   }
 
   .card{
@@ -148,4 +151,39 @@
 
 h4{
     font-size: 18px;
+}
+
+.heading {
+  text-align: center;
+  padding: 10px;
+
+  span {
+    padding: 10px;
+    border-bottom: 1px solid #999999;
+    cursor: pointer;
+  }
+
+  .bor-btm {
+    border-bottom: 1px solid red;
+    color: red;
+  }
+}
+
+.date_div{
+  position: absolute;
+  bottom: 14px;
+  left: 31px;
+}
+
+.audior-nodata{
+  display: flex;
+  justify-content: center;
+  margin-top:100px;
+  h4{
+    text-align: center;
+  }
+}
+
+.due-date{
+  font-size: 17px;
 }

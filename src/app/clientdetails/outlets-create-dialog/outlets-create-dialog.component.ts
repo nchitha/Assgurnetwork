@@ -30,7 +30,7 @@ export class OutletsCreateDialogComponent implements OnInit {
       this.outletForm = this.fb.group({
         outlet: [this.data.item.storeName, [Validators.required]],
         dealers: [this.data.item.dealerId, Validators.required],
-        outletType: [this.data.item.storeTypeId == 1 ? "Showroom" : "Workshop", Validators.required],
+        outletType: [this.data.item.storeTypeId, Validators.required],
         city: [this.data.item.city, Validators.required],
         state: [this.data.item.state, Validators.required],
         zone :[this.data.item.zone, Validators.required],

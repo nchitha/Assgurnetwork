@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 import { EngagementService } from '../../_services/engagement.service';
-
 @Component({
   selector: 'app-schedule-list',
   templateUrl: './schedule-list.component.html',
@@ -13,11 +12,13 @@ export class ScheduleListComponent implements OnInit {
 
   tasks: any;
   headActive: boolean = false;
-  constructor(private engagementService: EngagementService, private router: Router) { }
+  eng_title = "";
+  constructor(private engagementService: EngagementService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
-    this.getTasks("NEW");
+    this.route.queryParams.subscribe(params => {
+      this.eng_title = params.client_eng_name;
+    });
   }
 
   getTasks(status: string) {

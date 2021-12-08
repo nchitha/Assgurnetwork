@@ -197,3 +197,138 @@ border-width:4px 3px 3px 4px;
   color : #87431D;
   float: right;
 }
+
+.kpi-details-card{
+  margin: 15px;
+}
+
+.kpi-details-section{
+  overflow: hidden;
+}
+
+.kpi-toggle{
+  display: flex;
+  height: 56px;
+  align-items: center;
+  padding: 10px;
+  font-size: 22px;
+  border-top: 4px solid #666;
+  border-bottom: 4px solid #666;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #fff;
+}
+
+.kpi-toggle-style{
+  background: #666;
+  color: #fff;
+}
+
+.toggle-div {
+  display: flex;
+    margin-top: 30px;
+    margin-left: 15px;
+  p.sales {
+    font-weight: 400;
+    padding-right: 10px;
+    font-size:22px;
+}
+p.after-sales {
+  padding-left: 10px;
+    font-weight: 400;
+    font-size:22px;
+}
+}
+.kpi-details{
+  margin: 15px;
+  padding: 10px;
+  background: #fff;
+  .kpi-container {
+    // background: #E44838;
+    background-color: #666 !important;
+    color: #fff;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.kpi-container-bottom {
+  .bottom{
+    text-align: center;;
+  }
+  background: #c52a1a;;
+  color: #fff;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+.kpi-container-num {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  .highlight1{
+    // background: #eb8034;
+    background-color: lightgray !important;
+    color: black;
+    // color: #fff;
+    font-size: 15px;
+    text-align: left;
+    padding-top: 8px;
+  }
+  .num{
+    text-align: center;
+    cursor: default;
+  }
+  .num1{
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+}
+}
+
+.category-list {
+  background-color: #c52a1a;
+  color: #fff;
+  flex: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0!important;
+  padding: 10px
+;
+}
+
+div.tooltip {	
+  position: fixed;			
+  text-align: center;
+  padding: 5px;				
+  // font: 16px Roboto !important;	
+  font-size:16px !important;
+  font-family: Roboto !important;	
+  background: lightsteelblue;	
+  border: 0px;		
+  border-radius: 2px;			
+  pointer-events: none;			
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 10;
+  display : none;
+  opacity: 0.5;
+  background-color: black;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.text-center{
+  font-size:22px;
+}
+
+.saleAfterSale{
+  position:relative;
+  top:4px;
+}

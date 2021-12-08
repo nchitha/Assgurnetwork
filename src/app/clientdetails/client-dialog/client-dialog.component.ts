@@ -6,11 +6,10 @@ import { first } from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { DealersCreateDialogComponent } from '../dealers-create-dialog/dealers-create-dialog.component';
 import { OutletsCreateDialogComponent } from '../outlets-create-dialog/outlets-create-dialog.component';
-import { EngagementCreateDialogComponent } from '../engagement-create-dialog/engagement-create-dialog.component';
+//import { EngagementCreateDialogComponent } from '../engagement-create-dialog/engagement-create-dialog.component';
 import {Router} from '@angular/router';
 import { EngagementService } from '../../_services/engagement.service';
 import { UserCreateDialogComponent } from '../user-create-dialog/user-create-dialog.component';
-import { randomPareto } from 'd3';
 @Component({
   selector: 'app-client-dialog',
   templateUrl: './client-dialog.component.html',
@@ -113,17 +112,19 @@ export class ClientDialogComponent implements OnInit {
         dialogRef.afterClosed().subscribe( (result:any) => {
           this.fetch();
         });
-      }else if(this.type == 'Engagements'){
-        let dialogRef = this.dialog.open(EngagementCreateDialogComponent, {
-          width: '100%',
-          panelClass: 'custom-dialog-client',
-          data: { mode:"add",item: ""  }
-        });
+      }
+      // else if(this.type == 'Engagements'){
+      //   let dialogRef = this.dialog.open(EngagementCreateDialogComponent, {
+      //     width: '100%',
+      //     panelClass: 'custom-dialog-client',
+      //     data: { mode:"add",item: ""  }
+      //   });
     
-        dialogRef.afterClosed().subscribe( (result:any) => {
-          this.fetch();
-        });
-      }else{
+      //   dialogRef.afterClosed().subscribe( (result:any) => {
+      //     this.fetch();
+      //   });
+      // }
+      else{
         let dialogRef = this.dialog.open(UserCreateDialogComponent, {
           width: '588px',
           panelClass: 'custom-dialog-client',
@@ -175,7 +176,7 @@ export class ClientDialogComponent implements OnInit {
         this.fetch();
       });
     }else if(this.type =="Dealers"){
-      this.commonService.deleteDealers(item.dealer_id).pipe(first()).subscribe((data:any)  => {
+      this.commonService.deleteDealers(item.id).pipe(first()).subscribe((data:any)  => {
         this._snackBar.open(data.message, 'Close',{
           duration: 3000,
           panelClass: ["greenAlert"]

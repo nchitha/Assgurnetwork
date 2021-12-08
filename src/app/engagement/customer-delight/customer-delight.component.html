@@ -1,10 +1,11 @@
+<!-- <div class="eng_title" style="font-size: 20px;font-weight: bolder;margin: 10px;">{{eng_title}}</div>   -->
 <div class="d3charts">
     <div class="container-fluid">
         <div class="row" style="padding: 20px;">
             <div class="col-md-4 col-lg-4">
                 <div class="cards">
                     <div class="row title-infographic">
-                      <div class="col-md-6" style="padding-left:0px"> Sales</div>
+                      <div class="col-md-6" style="padding-left:0px;font-size: 22px;"> Sales</div>
                       <div class="col-md-4"></div>
                     </div>
                     <div class="row">
@@ -61,7 +62,7 @@
             <div class="col-md-4 col-lg-4">
                 <div class="cards">
                     <div class="row title-infographic">
-                      <div class="col-md-8" style="padding-left:0px"> After Sales</div>
+                      <div class="col-md-8" style="padding-left:0px;font-size: 22px;"> After Sales</div>
                       <div class="col-md-2"></div>
                     </div>
                     <div class="row">
@@ -165,5 +166,89 @@
             </div>
           </div>
         </div>
+    </div>
+    <div class="row" #kpidetailssection id="kpi-details-section" class="kpi-details-section">
+      <div class="kpi-details-card">
+        <div class="kpi-toggle" [ngClass]="{'kpi-toggle-style':!flag}" (click)="toggleKpiSection(kpidetailssection)">
+          <span>Non compliant bucket KPI's &nbsp; <i class="fa fa-long-arrow-right"></i></span>
+          <span class="flip" *ngIf="!flag"><i class="fa fa-expand"></i></span>
+          <span class="flip" *ngIf="flag"><i class="fa fa-compress"></i></span>
+        </div>
+        <div class="toggle-div" *ngIf="flag">
+          <p class="sales">Sales</p>
+
+          <mat-slide-toggle [(ngModel)]="checked" class="saleAfterSale" (change)="changed()"></mat-slide-toggle>
+          <p class=" after-sales">After sales</p>
+        </div>
+        <div *ngIf="flag">
+          <div class="row kpi-details">
+            <div class="col-md-12">
+              <div class="col-md-12 kpi-container">
+                <div class="col-md-4">
+                  <h4 class="text-center">{{checked==false?'Sales audit':'After sales audit'}}</h4>
+                </div>
+                <div class="col-md-2">
+                  <h4 class="text-center">Score achieved</h4>
+                </div>
+                <div class="col-md-2">
+                  <h4 class="text-center">Dealers non compliant</h4>
+                </div>
+                <div class="col-md-4">
+                  <h4 class="text-center">List of dealers non compliant</h4>
+                </div>
+              </div>
+              <div class="col-md-12 flex-center"
+                style="margin: 20px !important;color:#c52a1a;">
+                No data
+              </div>
+              <div class="col-md-12 flex-start" *ngIf="isLoading">
+                <h4>Loading...</h4>
+              </div>
+
+              <div>
+                <div class="col-md-12 kpi-container-num">
+                  <div class="col-md-4 category-list" >
+                    <p> Area</p>
+                    <span class="flip" ><i class="fa fa-expand"></i></span>
+                    <span class="flip"><i class="fa fa-compress"></i></span>
+                  </div>
+                  <div class="col-md-2 num">
+                    <h4> 34 % </h4>
+                  </div>
+                  <div class="col-md-2 num">
+                    <h4> 34 </h4>
+                  </div>
+                  <div class="col-md-4 flex-center">
+                  </div>
+                </div>
+                <div >
+                  <div>
+                    <!-- {{ items.value.area[0] | json}} -->
+                    <div>
+                      <div class="col-md-12 kpi-container-num">
+                        <!-- <div class="col-md-1"></div> -->
+                        <div class="col-md-4 highlight1">
+                          <p> sss </p>
+                        </div>
+                        <!-- <div class="col-md-1 num"></div> -->
+                        <div class="col-md-2 num1">
+                          <h4> 34 % </h4>
+                        </div>
+                        <div class="col-md-2 num1">
+                          <h4> 33 </h4>
+                        </div>
+                        <div class="col-md-4 flex-center" style=" background-color: #f9f9f9; flex-wrap: wrap;">
+                          <span ><span
+                              style="text-decoration: underline;cursor: pointer;">sssss</span>
+                            <span *ngIf="!isLast"> , </span> </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
 </div>

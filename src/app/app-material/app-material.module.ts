@@ -14,6 +14,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   ],
   providers: [  
     MatMomentDateModule,
-    MatNativeDateModule  
+    MatNativeDateModule,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+     { provide: MatDialogRef, useValue: {} }
   ],
   exports: [
 	MatIconModule,
