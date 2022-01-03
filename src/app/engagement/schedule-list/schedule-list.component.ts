@@ -10,7 +10,7 @@ import { EngagementService } from '../../_services/engagement.service';
 })
 export class ScheduleListComponent implements OnInit {
 
-  tasks: any;
+  tasks: any =[];
   headActive: boolean = false;
   eng_title = "";
   constructor(private engagementService: EngagementService, private router: Router, private route: ActivatedRoute) { }
@@ -19,6 +19,7 @@ export class ScheduleListComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.eng_title = params.client_eng_name;
     });
+    this.getTasks('NEW');
   }
 
   getTasks(status: string) {
@@ -33,7 +34,7 @@ export class ScheduleListComponent implements OnInit {
   }
 
   onCreate() {
-    this.router.navigate(['/app/engagement/new-schedule']);
+    this.router.navigate(['/app/engagement/new-schedule'], { queryParams:{client_eng_name:this.eng_title}});
   }
 
 }

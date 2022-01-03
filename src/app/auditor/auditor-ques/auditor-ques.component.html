@@ -1,7 +1,8 @@
 <div class="container questionnaire-container">
   <div class="questionnaire">
     <div class="question_title_div row">
-      <div class="col-md-6" style="font-size: 20px;"><b>{{storeName}}</b></div>
+      <div class="col-md-3" style="font-size: 20px;"><b>{{storeName}}</b></div>
+      <div class="col-md-3" style="font-size: 20px;">Status: <b>{{status}}</b></div>
       <div class="col-md-6">
         <span class="text-align-right">Completion status: {{completionStatus}}%</span>
         <span class="text-align-right" style="margin-right:20px;">Unanswered questions: {{totalUnAns}}</span>
@@ -159,7 +160,7 @@
   <div class="create-wrap">
     <button class="btn btn-default btn-main margin-right" >Summary
     </button>
-    <button class="btn btn-default btn-main">Dealer Review >
+    <button class="btn btn-default btn-main" [disabled]="completionStatus < 100">Dealer Review >
     </button></div>
 </div>
 

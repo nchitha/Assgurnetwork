@@ -1,5 +1,6 @@
 <div class="container-fluid questionnaire-container">
     <div class="dealer review">
+      <div class="col-md-6" style="font-size: 20px;"><b>{{storeName}}</b></div>
         <div class="container-fluid">
             <div class="row menu-strip" style="height: 50px;">
                 <div class="col-md-1 col-lg-1"><b>Area Level</b></div>
@@ -34,7 +35,7 @@
                 <div class="col-md-3 col-lg-3">
                   <div class="switch">
                     <p class="switch-cont"><b></b></p>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle  [(ngModel)]="isMarkedChecked" (change)="changed('marked')"></mat-slide-toggle>
                   </div>
                 </div>
                 <div class="col-md-2 col-lg-2">
@@ -43,7 +44,7 @@
                 <div class="col-md-2 col-lg-2">
                   <div class="switch">
                     <p class="switch-cont"><b></b></p>
-                    <mat-slide-toggle></mat-slide-toggle>
+                    <mat-slide-toggle [(ngModel)]="isQuickWinChecked" (change)="changed('marked')"></mat-slide-toggle>
                   </div>
                 </div>
               </div>
@@ -51,20 +52,6 @@
                 No Data Available
             </div>
             <div class="date-fields row">
-                <div class="form-group col-sm-3">
-                    <label for="exampleInputEmail1" class="color">Meeting Date</label><br>
-                    <mat-form-field>
-                        <input matInput [matDatepicker]="picker" [(ngModel)]="meeting_date">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Meeting Date"> -->
-                </div>
-                <div class="form-group col-sm-3">
-                    <label for="exampleInputPassword1">Participants</label>
-                    <textarea class="form-control" id="exampleInputPassword1" placeholder="Participants"></textarea>
-                </div>
-
                 <div *ngIf="defaultCategorySelected.length && defaultBucketSelected.length" class=" ">
                     <div class="table-container" id="scroll" data-simplebar style="max-height:386px">
                         <table class="table table-striped">
@@ -75,8 +62,6 @@
                                   <th>Response</th>
                                   <th>Current State</th>
                                   <th>Root Cause</th>
-                                  <th>Action Plan</th>
-                                  <th>Responsibility</th>
                                   <th>Time Line</th>
                                   <th>Quick Win</th>
                                   <th>View Evidences</th>
@@ -84,65 +69,68 @@
                                   <th>Submit Details</th>
                                 </tr>
                             </thead>
-                            <tr>
+                            <tr *ngFor="let question of question_array;index as i">
                               <td>
-                                <p>3.01 </p>
+                                <p>{{question.kpiNumber}} </p>
                               </td>
                               <td>
-                                <p>The dealership grounds/premises from the outside is well maintained</p>
+                                <p>{{question.question}}</p>
                               </td>
                               <td>
                                 <span>
-                                  <select id="dropdown">
+                                  <select [(ngModel)]="question.answer" id="dropdown">
                                     <option *ngFor="let opt of options"  [value]="opt.name">
-            
-                                      {{opt.name}}</option>
+                                      {{opt.name}}
+                                    </option>
                                   </select>
                                 </span>
                               </td>
                               <td>
-                                <span>
-                                  <input  type="text"/>
+                                <span *ngIf="question.answer=='No'">
+                                  <input  type="text"  [(ngModel)]="question.currentState" [ngModelOptions]="{standalone: true}" />
                                 </span>
                               </td>
                               <td>
-                                <span>
-                                  <input  type="text"/>
+                                <span  *ngIf="question.answer=='No'">
+                                  <input  type="text" [(ngModel)]="question.rootCause" [ngModelOptions]="{standalone: true}" />
                                 </span>
                               </td>
                               <td>
-                                <span>
-                                  <input  type="text"/>
-                                </span>
-                              </td>
-                              <td>
-                                <span>
-                                  <input  type="text"/>
-                                </span>
-                              </td>
-                              <td>
-                                <span>
+                                <span *ngIf="question.answer=='No'">
                                   <mat-form-field>
-                                    <input matInput [matDatepicker]="picker">
+                                    <input matInput [matDatepicker]="picker"  [(ngModel)]="question.deadline" [ngModelOptions]="{standalone: true}">
                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                     <mat-datepicker #picker></mat-datepicker>
                                   </mat-form-field>
                                 </span>
                               </td>
                               <td class="center-align">
-                                <span>
-                                  <mat-icon style="font-size:18px ; color: #E44838">wine_bar</mat-icon>
+                                <span *ngIf="question.answer=='No'" class="quicwinicon">
+                                  <i *ngIf="question.quick_win==0 || question.quick_win.length==0"
+                                    (click)="question.quick_win=1;onWinClick(question)"
+                                    class="fa fa-trophy" style="font-size:18px"></i>
+                                  <i *ngIf="question.quick_win==1"
+                                    (click)="question.quick_win=0;onWinClick(question)"
+                                    class="fa fa-trophy" style="font-size:18px ; color: #E44838"></i>
                                 </span>
                               </td>
                               <td class="text-align">
                                 <span>
-                                  <mat-icon style="font-size:18px ; color: #E44838">remove_red_eye</mat-icon>
+                                  <span data-toggle="modal"
+                                  (click)="getEvidence(question)"
+                                  data-target="#evidenceModal">
+                                    <img style="width: 25px;" class="view" src="assets/images/view.svg" alt="viewEvidence">
+                                </span>
                                 </span>
                               </td>
                               <td class="text-align">
-                                <span>
-                                  <mat-icon style="font-size:18px ; color: #E44838">file_upload</mat-icon>
-                                </span>
+                                <form [formGroup]="uploadForm">
+                                  <span (click)="hiddenfileinput.click()"><img class="upload-file"
+                                      src="assets/images/upload-file.png"  style="width: 20px;" /></span>
+                                  <input style="display: none" type="file" name="evidence"
+                                  (change)="onFileSelect($event,question)"
+                                    #hiddenfileinput multiple>
+                                </form>
                               </td>
                               <td class="text-align">
                                 <span>
@@ -152,9 +140,30 @@
                             </tr>
                         </table>
                     </div>
-                    <button class="btn btn-publish">Submit</button>
+                    <button class="btn btn-publish" (click)="submitForm()">Submit</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="evidenceModal" role="dialog">
+  <div class="modal-dialog admin_form_popup1">
+
+    <div class="modal-content">
+      <div class="modal-header info manage_users admin_popup_model">
+        <h3 class="modal-title "> Evidences uploaded </h3>
+        <span type="button" class="close" data-dismiss="modal">&times;</span>
+      </div>
+      <div class="modal-body info_model_body">
+        <div *ngIf="evidenceArr.length>0">
+          <li *ngFor="let evidence of evidenceArr;index as k">
+            <span *ngIf="evidence.evidenceName!='null'"> <a [href]="evidence"
+                target="_blank">evidence{{k+1}}</a></span>&nbsp;
+            <span class="float-right padding-right"
+              (click)="deleteEvidence(evidence.evidenceId)"><a><i class="fa fa-trash-o fa-lg"></i></a></span>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

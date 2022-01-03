@@ -13,11 +13,11 @@ export class EngagementCreateDialogComponent implements OnInit {
 
   versionDropdown: any[] = [{
       name: 'Version 1',
-      value: 1
+      value: "V1"
     },
     {
       name: 'Version 2',
-      value: 2
+      value: "V2"
     }
   ];
   isFileUploaded: boolean = false;

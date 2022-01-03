@@ -32,6 +32,7 @@ export class AuditorQuesComponent implements OnInit {
   qId: number;
   auditTaskId: number;
   evidenceArr = [];
+  status:String = "";
   constructor(private formBuilder: FormBuilder,private route: ActivatedRoute,private auditService:AuditService,private spinner: NgxSpinnerService,private _snackBar: MatSnackBar) {
     this.uploadForm = this.formBuilder.group({
       evidence: ['']
@@ -43,6 +44,10 @@ export class AuditorQuesComponent implements OnInit {
       this.engId = params.eng_id;
       this.storeName = params.store_name;
       this.storeId = params.storeId;
+      if(params.status == "INPROGRESS")
+        this.status = "In Progress";
+      else(params.status == "NEW")
+        this.status = "New";
     });
     this.categoryArray = [];
     this.defaultCategorySelected = [];
@@ -108,6 +113,8 @@ export class AuditorQuesComponent implements OnInit {
         console.log(this.question);
         this.spinner.hide();
       });
+    }else{
+      this.spinner.hide();
     }
   }
 

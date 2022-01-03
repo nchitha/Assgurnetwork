@@ -6,7 +6,7 @@
       <span [ngClass]="{'bor-btm': headActive}" (click)="headActive = true; getTasks('INPROGRESS')">In progress</span>
     </div>
     <div class="create">
-      <button class="btn btn-default btn-main" (click)="onCreate()">CREATE</button> 
+      <button class="btn btn-default btn-main" (click)="onCreate()">Schedule</button> 
     </div>
   
     <div class="table-container">
@@ -30,5 +30,7 @@
           </tr>
         </tbody>
       </table>
+      
+      <div *ngIf="tasks.length < 1" style="text-align:center;">No Data</div>
     </div>
   </div>

@@ -221,9 +221,9 @@ export class CommonService {
 
   editOutlet(outlet: any,storeId:any) {
     let params = {
-      dealerName : outlet.dealers,
+      dealerId : outlet.dealers,
       storeName:outlet.outlet,
-      storeType:outlet.outletType,
+      storeTypeId:outlet.outletType,
       address:outlet.address,
       city:outlet.city,
       state:outlet.state,

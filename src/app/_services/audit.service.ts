@@ -92,4 +92,23 @@ export class AuditService {
       this.spinner.hide();
     }));
   }
+
+  getDeakerReviewResponse(eng_id,store_id,bucket,category,isMarked,quickWin){
+    return this.http.get<any>(`${environment.apiUrlAdmin}audit/review/${eng_id}/${store_id}?categoryLevel=${category}&bucketLevel=${bucket}&quickWin=${quickWin}&isMarked=${isMarked}`)
+    .pipe(tap(data => {
+      return data;
+    },error => {
+    }));
+  }
+
+  putStatusAudit(status:any,auditId:any){
+    this.spinner.show();
+    return this.http.put<any>(`${environment.apiUrlAdmin}audit/shedule/${auditId}`,{status})
+    .pipe(tap(data => {
+      this.spinner.hide();
+      return data;
+    },error => {
+      this.spinner.hide();
+    }));
+  }
 }
